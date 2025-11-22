@@ -70,6 +70,7 @@ docker compose up -d
 ![image](./assets/screenshots/5.png)
 
 ## 贡献
+
 如果您想贡献代码，可以在Github上 [提交 Issue](https://github.com/BidingCC/BuildingAI/issues/new/choose) 或者 [提交 PR](https://github.com/BidingCC/BuildingAI/pulls)。
 
 也可以通过[社群](https://buildingai.cc/docs/introduction/community)、[问答社区](https://buildingai.cc/question)等方式联系我们。

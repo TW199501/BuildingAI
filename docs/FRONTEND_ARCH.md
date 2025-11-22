@@ -4,6 +4,7 @@
 
 - 前端主應用專案路徑：`packages/web/buildingai-ui`
 - 採用 Nuxt 4 + Vue 3 + Pinia + Nuxt UI + TailwindCSS，透過 `@buildingai/nuxt` 提供的 `defineBuildingAIConfig` 封裝共用設定。
+- **Frontend & UI Tech Stack（UI Tech Stack / UI 技術棧）**：以上組合構成 BuildingAI Web 端的 UI 技術棧，後續文件中統一使用此英文稱呼。
 - 主要用途：
   - 承載 BuildingAI 的 Web Portal / Console 介面。
   - 透過動態路由與權限控制呈現各種後台頁面與擴充功能。
