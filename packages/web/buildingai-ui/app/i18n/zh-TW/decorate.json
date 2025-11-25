@@ -1,0 +1,48 @@
+{
+    "micropage": {
+        "title": "微頁面管理",
+        "list": {
+            "sourceTypePC": "PC端",
+            "addMicropage": "新增微頁面",
+            "confirmDeleteMessage": "確定要刪除這個微頁面嗎？刪除後無法恢復。",
+            "batchDeleteMessage": "確定要刪除選中的微頁面嗎？刪除後無法恢復。",
+            "getListFailed": "獲取微頁面列表失敗",
+            "columns": {
+                "name": "頁面名稱"
+            },
+            "actions": {
+                "design": "設計"
+            }
+        },
+        "edit": {
+            "modalTitleCreate": "新增微頁面",
+            "modalTitleEdit": "編輯微頁面",
+            "modalDescriptionCreate": "創建新的微頁面",
+            "modalDescriptionEdit": "編輯微頁面資訊",
+            "pageName": "頁面名稱",
+            "pageNamePlaceholder": "請輸入頁面名稱",
+            "pageNameRequired": "頁面名稱不能為空",
+            "pageNameMaxLength": "頁面名稱長度不能超過32個字元",
+            "getDetailFailed": "獲取微頁面詳情失敗"
+        }
+    },
+    "layout": {
+        "title": "布局設計器",
+        "subtitle": "設計和配置您的頁面布局",
+        "saveConfig": "保存配置",
+        "saveSuccess": "布局保存成功",
+        "saveSuccessDescription": "布局配置保存成功",
+        "property": {
+            "layoutStyle": "布局風格",
+            "layoutStylePlaceholder": "選擇布局風格",
+            "navigationMenu": "導航菜單",
+            "menuTitle": "菜單標題",
+            "menuTitlePlaceholder": "菜單標題",
+            "menuLink": "菜單連結",
+            "menuIcon": "菜單圖示",
+            "newMenuTitle": "新菜單",
+            "menuNumber": "菜單 {number}"
+        }
+    },
+    "openDecorateSettings": "設置裝修位"
+}

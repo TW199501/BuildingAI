@@ -1,0 +1,27 @@
+{
+    "pluginSidebar": "返回上一頁",
+    "admin": "工作檯",
+    "power": "積分",
+    "recharge": "儲值",
+    "logout": "退出",
+    "search": "搜索",
+    "sidebar": "側邊欄模式",
+    "mixture": "混合模式",
+    "officeLink": "官方網站",
+    "goHome": "返回首頁",
+    "menu": {
+        "workspace": "工作檯",
+        "system": "設置"
+    },
+    "theme": {
+        "theme": "主題設置",
+        "system": "跟隨系統",
+        "light": "淺色模式",
+        "dark": "深色模式",
+        "color": "主題色",
+        "neutralLabel": "中性色"
+    },
+    "powerDetail": "積分明細",
+    "userAgreement": "用戶協議",
+    "privacyPolicy": "隱私政策"
+}

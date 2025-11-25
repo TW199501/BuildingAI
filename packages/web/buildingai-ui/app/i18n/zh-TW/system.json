@@ -1,0 +1,160 @@
+{
+    "website": {
+        "title": "網站設置",
+        "description": "管理網站的基本配置資訊",
+        "tabs": {
+            "information": "網站資訊",
+            "agreement": "政策協議",
+            "copyright": "版權備案",
+            "statistics": "站點統計"
+        },
+        "information": {
+            "title": "網站基本資訊設置",
+            "description1": "管理網站的基本資訊",
+            "name": {
+                "label": "網站名稱",
+                "placeholder": "請輸入網站名稱",
+                "description": "網站名稱將顯示在瀏覽器標籤頁和系統各處",
+                "required": "請輸入網站名稱"
+            },
+            "description": {
+                "label": "網站描述",
+                "placeholder": "請輸入網站描述",
+                "description": "網站的簡短描述，將顯示在搜尋引擎結果和社交媒體分享中"
+            },
+            "icon": {
+                "label": "網站圖示",
+                "description": "推薦尺寸: 100x100px, 支持格式: PNG, ICO, JPG",
+                "upload": "上傳圖示",
+                "required": "請上傳網站圖示"
+            },
+            "logo": {
+                "label": "網站Logo",
+                "description": "推薦尺寸: 100x100px, 支持格式: PNG, JPG, JPEG",
+                "upload": "上傳LOGO",
+                "required": "請上傳網站Logo"
+            },
+            "spaLoadingIcon": {
+                "label": "載入圖示",
+                "description": "推薦高度尺寸: 48px, 支持格式: PNG, JPG, JPEG",
+                "upload": "上傳載入圖示",
+                "required": "請上傳載入圖示"
+            }
+        },
+        "agreement": {
+            "title": "網站政策協議設置",
+            "description": "管理網站的隱私政策、服務條款和支付協議內容",
+            "privacy": "隱私政策",
+            "service": "服務條款",
+            "payment": "支付協議",
+            "titleLabel": "標題",
+            "contentLabel": "內容",
+            "titleRequired": "請輸入標題",
+            "contentRequired": "請輸入內容",
+            "privacyTitle": "請輸入隱私政策標題",
+            "privacyContent": "請輸入隱私政策內容",
+            "serviceTitle": "請輸入服務條款標題",
+            "serviceContent": "請輸入服務條款內容",
+            "paymentTitle": "請輸入支付協議標題",
+            "paymentContent": "請輸入支付協議內容"
+        },
+        "copyright": {
+            "title": "版權備案資訊設置",
+            "description": "管理網站的版權和備案資訊",
+            "displayName": {
+                "label": "備案顯示名稱",
+                "placeholder": "請輸入備案顯示名稱，如：京ICP證030173號",
+                "required": "請輸入備案顯示名稱"
+            },
+            "icon": {
+                "label": "備案圖示",
+                "upload": "上傳圖示",
+                "required": "請上傳圖示"
+            },
+            "url": {
+                "label": "備案跳轉連結",
+                "placeholder": "請輸入備案跳轉連結，如：https://beian.miit.gov.cn/",
+                "required": "請輸入備案跳轉連結"
+            }
+        },
+        "loginConfig": {
+            "title": "登錄設置",
+            "registerType": {
+                "label": "註冊方式",
+                "items": {
+                    "account": "帳號註冊",
+                    "weixin": "微信註冊"
+                },
+                "description": "必須選擇其中一種註冊方式"
+            },
+            "loginType": {
+                "label": "登錄方式",
+                "items": {
+                    "account": "帳號登入",
+                    "weixin": "微信登錄"
+                },
+                "description": "至少保留一種登錄方式，且默認登錄方式不能取消"
+            },
+            "defaultLoginType": {
+                "label": "默認登錄方式",
+                "items": {
+                    "account": "帳號登入",
+                    "weixin": "微信登錄"
+                },
+                "placeholder": "請選擇默認登錄方式",
+                "required": "請選擇默認登錄方式",
+                "description": "設置在前台的默認登錄方式"
+            },
+            "isSimultaneouslyOnline": {
+                "label": "多處登錄",
+                "description": "是否允許多處同時登錄"
+            },
+            "isAgreement": {
+                "label": "是否開啟協議",
+                "description": "用戶登入/註冊時，是否顯示服務協議和隱私政策"
+            },
+            "open": "開啟",
+            "close": "關閉",
+            "updateSuccess": "登錄設置保存成功！"
+        },
+        "statistics": {
+            "title": "站點統計配置",
+            "description": "配置網站統計分析工具",
+            "clarity": {
+                "label": "clarity 應用ID",
+                "placeholder": "請輸入應用 ID",
+                "required": "請輸入應用 ID",
+                "minLength": "應用 ID 長度不能少於 5 個字元",
+                "maxLength": "應用 ID 長度不能超過 50 個字元",
+                "linkLabel": "開通地址"
+            },
+            "appid": {
+                "label": "統計應用 ID",
+                "placeholder": "請輸入統計應用 ID",
+                "required": "請輸入統計應用 ID",
+                "minLength": "應用 ID 長度不能少於 5 個字元",
+                "maxLength": "應用 ID 長度不能超過 50 個字元"
+            },
+            "info": {
+                "title": "支持多種統計工具，如 Google Analytics、百度統計、Clarity 等",
+                "description": "請在對應的統計平台創建應用後，將獲取到的應用 ID 填寫到上方輸入框中"
+            }
+        },
+        "actions": {
+            "save": "保存設置",
+            "saveChanges": "保存更改",
+            "saveConfig": "保存配置",
+            "reset": "重設設置",
+            "saving": "保存中...",
+            "resetting": "重設中..."
+        },
+        "messages": {
+            "loadFailed": "獲取網站配置失敗，請檢查網路連接後重試",
+            "saveFailed": "保存失敗，請檢查網路連接後重試",
+            "saveSuccess": "保存成功！",
+            "resetSuccess": "表單已重設",
+            "resetEmpty": "表單已清空",
+            "configNotLoaded": "配置數據未載入，請刷新頁面重試"
+        }
+    }
+}

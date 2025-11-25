@@ -1,0 +1,69 @@
+{
+    "backend": {
+        "recharge": {
+            "pageTitle": "儲值訂單",
+            "pageDescription": "儲值訂單詳情",
+            "rechargeCount": "儲值訂單數",
+            "refundCount": "退款訂單數",
+            "netIncome": "淨收入",
+            "totalRechargeAmount": "累計儲值金額",
+            "totalRefundAmount": "累計退款金額",
+            "list": {
+                "pageTitle": "儲值訂單列表",
+                "orderNo": "訂單號",
+                "user": "用戶",
+                "rechargeQuantity": "儲值數量",
+                "freeQuantity": "贈送數量",
+                "quantityReceived": "到帳數量",
+                "paidInAmount": "實付金額",
+                "paymentMethod": "支付方式",
+                "paymentStatus": "支付狀態",
+                "createdAt": "下單時間",
+                "actions": "操作",
+                "refund": "退款",
+                "viewDetails": "查看詳情",
+                "searchOrderNo": "搜索訂單號",
+                "searchUser": "搜索用戶ID/暱稱/手機號碼",
+                "wechatPay": "微信支付",
+                "alipayPay": "支付寶支付",
+                "paid": "已支付",
+                "unpaid": "未支付",
+                "refunded": "已退款",
+                "notRefunded": "未退款",
+                "refundStatus": "退款狀態"
+            },
+            "detail": {
+                "pageTitle": "訂單詳情",
+                "orderSource": "訂單來源",
+                "userInfo": "用戶資訊",
+                "orderType": "訂單類型",
+                "paymentStatus": "支付狀態",
+                "paymentMethod": "支付方式",
+                "createdAt": "下單時間",
+                "paidAt": "支付時間",
+                "refundStatus": "退款狀態",
+                "serialNumber": "流水單號",
+                "close": "關閉",
+                "refund": "申請退款",
+                "paid": "已支付",
+                "unpaid": "未支付"
+            }
+        }
+    },
+    "frontend": {
+        "recharge": {
+            "list": {
+                "orderNo": "訂單編號",
+                "rechargeQuantity": "儲值數量",
+                "freeQuantity": "贈送數量",
+                "quantityReceived": "到帳數量",
+                "paidInAmount": "實付款",
+                "paymentMethod": "支付方式",
+                "createdAt": "下單時間",
+                "refunded": "已退款",
+                "wechat": "微信支付",
+                "alipay": "支付寶支付"
+            }
+        }
+    }
+}

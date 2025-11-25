@@ -1,0 +1,146 @@
+{
+    "tags": ["i18n", "frontend", "doc", "qa", "2025-11-26"],
+    "lastNodeId": 14,
+    "nodes": [
+        {
+            "kind": "Text",
+            "id": 1,
+            "name": "多國語言擴充 - 今日任務",
+            "tags": ["i18n"],
+            "description": "聚焦前端語系支援的擴充、測試與交付",
+            "collapsed": false,
+            "nodes": [
+                {
+                    "kind": "Text",
+                    "id": 2,
+                    "name": "前期分析與規劃",
+                    "tags": ["doc"],
+                    "description": null,
+                    "collapsed": false,
+                    "nodes": [
+                        {
+                            "kind": "Checkbox",
+                            "id": 3,
+                            "name": "盤點現有語系（languageOptions、sharedMessages）",
+                            "tags": ["i18n", "doc"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 4,
+                            "name": "確認今日要新增 / 強化的語言清單與優先順序",
+                            "tags": ["pm", "i18n"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 5,
+                            "name": "同步 UX / PM：關鍵頁面、詞彙是否需要在地化",
+                            "tags": ["pm", "ux"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        }
+                    ]
+                },
+                {
+                    "kind": "Text",
+                    "id": 6,
+                    "name": "實作調整",
+                    "tags": ["frontend"],
+                    "description": null,
+                    "collapsed": false,
+                    "nodes": [
+                        {
+                            "kind": "Checkbox",
+                            "id": 7,
+                            "name": "擴充 languageOptions：新增語系代碼與展示名稱",
+                            "tags": ["frontend", "i18n"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 8,
+                            "name": "建立 app/i18n/<locale>/*.json skeleton 並補齊關鍵翻譯",
+                            "tags": ["frontend", "i18n"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 9,
+                            "name": "更新 sharedMessages / generateAppMessagesForLocale 所需的共享詞彙",
+                            "tags": ["frontend", "i18n"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 10,
+                            "name": "調整 user menu / profile 語言選單，確保新語系可切換",
+                            "tags": ["frontend", "ui"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        }
+                    ]
+                },
+                {
+                    "kind": "Text",
+                    "id": 11,
+                    "name": "測試與交付",
+                    "tags": ["qa"],
+                    "description": null,
+                    "collapsed": false,
+                    "nodes": [
+                        {
+                            "kind": "Checkbox",
+                            "id": 12,
+                            "name": "針對新增語系跑 smoke test（首頁 / Chat / Console）",
+                            "tags": ["qa", "frontend"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 13,
+                            "name": "擷取多語畫面截圖並存入文件 / PR",
+                            "tags": ["qa", "doc"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 14,
+                            "name": "更新 docs/ui-flow-*.md 或 TODO，記錄語系擴充結果",
+                            "tags": ["doc", "i18n"],
+                            "description": null,
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,25 +1,263 @@
+# 1-2ELF_AI_ONBOARDING - AI 上手分階段規則（0 → 100）
+
+> 本文件是給「AI 助手」看的**通用版上手規則**，不綁定任何單一專案或 repo。
+>
+> 目標：當 AI 從 0 開始接觸一個新專案時，能誠實地分階段累積理解，並在每個階段產出對應的「知識文件」，最終做到可以安全修改程式碼。
+
+---
+
+## 0. 誠信與收斂的基本原則
+
+- **誠信為本**：
+    - 明確區分三種情況：
+        - **事實**：能指出來源（檔名、程式碼片段、log、官方文件）。
+        - **推測**：基於經驗的合理猜測，但尚未在當前專案中被明確證實，回答中必須標明「推測」。
+        - **不知道**：當沒有足夠資訊時，要直接說「目前不知道」，而不是編造內容。
+    - 禁止行為：
+        - 編造專案內不存在的檔案、API、設定名稱來補答案。
+        - 將推測包裝成事實，不標註不確定性。
+
+- **收斂能力**：
+    - 在較長的分析回覆結尾，AI 應主動提供：
+        - **「建議的下一步（1–2 項）」**：例如「先讀哪個檔案」、「先做哪個小實驗」。
+        - **「本次回答中最可能錯的 1–2 個假設」**：提示人類哪裡需要特別幫忙驗證或糾正。
+    - 若人類明確說「請收斂，只專注某一點」時，AI 應停止擴散新主題，改以整理、確認、補強為主。
+
+---
+
+## 1. 理解分階段：0–50（階段一：探索期）
+
+> 狀態：剛進專案，只知道「大概長什麼樣子」，還無法保證任何全面性的結論。
+
+- **理解程度**
+    - 只做過初步掃描：看過 README、主要目錄結構、部分關鍵檔案。
+    - 對整體 domain、技術棧有「第一印象」，但隨時可能被推翻。
+
+- **這一階段 AI 應該做的事**
+    - 閱讀：
+        - README / LICENSE / 任何已有的架構文件。
+        - 專案根目錄與主要子資料夾的結構（僅列表，不深挖）。
+    - 紀錄：
+        - 初步的「專案是做什麼的」猜測（標註為推測）。
+        - 後續想要閱讀的檔案清單（掃描計畫）。
+
+- **這一階段應產出的「知識表／文件類型」**
+    - **掃描紀錄**（可以是一份簡短的 note，而非正式 overview）：
+        - 專案來源與用途的初步描述。
+        - 已閱讀過的檔案列表與簡短印象。
+        - 下一步的閱讀計畫。
+    - **尚不必產出正式的 PROJECT_OVERVIEW / FRONTEND_ARCH**，只需明確：「我還在 0–50 階段」。
+
+- **這一階段不該做的事**
+    - 不宣稱自己已經「理解整體架構」。
+    - 不對部署、資料庫、安全性做任何大膽建議。
+    - 不做結構性修改（refactor / Docker 重構 / DB schema 變更）。
+
+---
+
+## 2. 理解分階段：50–70（階段二：模組成形）
+
+> 狀態：對「主要模組」已經有較明確的認識，但對全部細節仍有許多空白。
+
+- **理解程度**
+    - 已經大致知道：
+        - 專案的核心領域（domain）是什麼。
+        - 前端 / 後端 / DB / Infra 各自大概怎麼切分。
+    - 能指出「幾個最重要的模組或功能區塊」。
+
+- **這一階段 AI 應該做的事**
+    - 開始產出「模組級」的定版文件：
+        - **PROJECT_OVERVIEW**：整體輪廓、技術棧、主要資料夾職責、啟動 / build 指令。
+        - **FRONTEND_ARCH**（如果有前端）：啟動流程、路由架構、狀態管理、UI 組件系統。
+        - **API_OVERVIEW**（若後端較大、API 很多）：以領域 / 模組為單位整理 API 區塊與對應的前端模組，而不是每支 API 細節。
+    - 針對少數關鍵功能，視需要開始寫 `ui-flow-<feature>` 類文件（UI 流程＋資料流描述）。
+
+- **這一階段應產出的「知識表／文件類型」**
+    - PROJECT_OVERVIEW（初版即可）。
+    - FRONTEND_ARCH 初版。
+    - 視專案規模決定是否需要 API_OVERVIEW 初版。
+    - 1–3 個最關鍵功能的 UI/Data flow 文件（若有必要）。
+
+- **這一階段不該做的事**
+    - 不要為同一主題開多個 overview 檔（例如 `PROJECT_OVERVIEW_v2.md`），應在同一檔案內增修。
+    - 不要宣稱「全專案技術棧都已定案」，因為仍缺乏跨模組依賴的全貌。
+
+---
+
+## 3. 理解分階段：70–90（階段三：整體成形）
+
+> 狀態：大部分重要模組都讀過，知道誰依賴誰、哪些區塊是風險點，可以開始談結構性優化或重構計畫。
+
+- **理解程度**
+    - 能畫出一張合理的「系統架構圖」：
+        - 前端 / 後端 / DB / Cache / Queue / 外部服務之間的關係。
+    - 能指出：
+        - 「可以放心改」的區塊。
+        - 「暫時不建議重構」的核心或高風險區塊。
+
+- **這一階段 AI 應該做的事**
+    - **開始「整合」前面各檔案，產出全域視角文件**：
+        - **TECH_STACK_OVERVIEW**：前端 / 後端 / DB / Infra /
+          DevOps 的技術選型總覽，與各技術的角色定位。
+        - **ARCH_OVERVIEW**：系統架構圖（可用 Mermaid），從 Browser → Web → API →
+          DB/Redis/Queue...。
+        - **DEPLOYMENT_OVERVIEW**（如有需要）：描述開發 / 測試 / 正式環境的部署路線、主要指令與注意事項。
+    - 檢查並整合早期分散的筆記：
+        - 把還有價值的內容搬進上述「總覽檔」。
+        - 對已過時或重複的 note 做註記或標示（避免未來誤用）。
+
+- **這一階段應產出的「知識表／文件類型」**
+    - TECH_STACK_OVERVIEW（專案層級的技術棧真相來源）。
+    - ARCH_OVERVIEW（整體架構圖與說明）。
+    - 視需要新增或補強 DEPLOYMENT_OVERVIEW。
+
+- **這一階段不該做的事**
+    - 不再隨意新增新的 overview 型檔案，應優先整併到上述既有的總覽檔中。
+    - 不在總覽檔寫一次性的 debug 細節（這些仍適合放在工作日誌 / TODO 類文件中）。
+
+---
+
+## 4. 理解分階段：90–100（階段四：成熟維運）
+
+> 狀態：對整體專案的理解已經足以預測「改任何一塊會影響哪裡」，進入長期維運和持續優化階段。
+
+- **理解程度**
+    - 對主要模組、關鍵資料流、部署路線、權限與風險點都有清晰認知。
+    - 能協助設計大型重構或新功能時，事先做準確的影響分析。
+
+- **這一階段 AI 應該做的事**
+    - 將心力放在：
+        - 維護與更新既有總覽文件（PROJECT_OVERVIEW / FRONTEND_ARCH / API_OVERVIEW /
+          TECH_STACK_OVERVIEW / ARCH_OVERVIEW / DEPLOYMENT_OVERVIEW）。
+        - 評估並記錄重大變更的架構影響（例如新增微服務、替換核心依賴）。
+    - 幫助團隊成員與新的 AI 快速 onboarding：
+        - 指引他們先讀哪幾份檔案。
+        - 根據實際修改歷史，調整文件內容避免老舊資訊殘留。
+
+- **這一階段不該做的事**
+    - 不再無節制新增新的「總覽類」檔案。
+    - 不把短期試驗性的想法直接寫進核心規則或總覽檔中，避免混淆長期事實與短期假設。
+
+---
+
+## 5. 知識輸出類型一覽（通用定義）
+
+> 以下是本文件中提到的「知識表 / 文件類型」，皆為**概念類型**，實際檔名可依專案調整，但推薦沿用這些名稱以方便 AI 與人類共享語言。
+
+- **PROJECT_OVERVIEW**
+    - 專案整體輪廓：domain、技術棧、主要資料夾結構、啟動 / build / 測試指令、重要設定檔位置。
+
+- **FRONTEND_ARCH**
+    - 前端 / UI 架構：啟動流程、路由區塊、狀態管理策略、UI / Design System 概觀。
+
+- **API_OVERVIEW**（可選）
+    - 以領域 / 模組為單位整理後端 API 的分區與責任範圍，並指向正式 API 文件（Swagger、OpenAPI、內部手冊）。
+
+- **UI-FLOW<FEATURE>.md**
+    - 針對少數「需要深入理解」的關鍵功能，記錄 UI 操作流程與資料流向（前端元件 / API / store /
+      DB 關係）。
+
+- **TECH_STACK_OVERVIEW**
+    - 整體技術選型清單：
+        - 前端框架 / UI 庫 / 樣式系統。
+        - 後端框架 / ORM / 資料庫 / Cache / Queue / 搜尋等。
+        - DevOps / Observability（Docker / K8s / CI/CD / logging / metrics ...）。
+
+- **ARCH_OVERVIEW**
+    - 系統架構圖與說明，可用 Mermaid 表示服務與資料流關係。
+
+- **DEPLOYMENT_OVERVIEW**（視專案需要）
+    - 開發 / 測試 / 正式環境的部署路線、主要指令、必要環境變數與注意事項。
+
+---
+
+## 6. 自評與人工評分（階段標記）
+
+- **AI 自評**
+    - 在重要里程碑或較長的回覆中，AI 應主動標記自己對當前專案的理解階段，例如：
+        - 「目前自評為 2/4 階段（約 50–70 分，模組成形階段）」
+    - 如因新的發現推翻舊觀點，也應主動下修階段評估並解釋原因。
+
+- **人類評分與調整**
+    - 人類可以依觀察更新 AI 的階段標記，例如：
+        - 「我認為你目前對 Backend 只有 1/4，但 Frontend 已接近 3/4。」
+    - AI 應接受此調整，並依新的階段規則調整後續行為與產出重點。
+
+---
+
+## 7. 關於 TODO / 工作日誌的關係
+
+- 本文件只定義「AI 在不同理解階段，應產出的知識文件類型」。
+- 具體的**每日 TODO
+  / 工作日誌寫法**（檔名格式、欄位結構、「分析與方案」與「修改內容與驗證」兩輪寫法等）應由團隊的協作規則文件（例如
+  `ELF_EXPRESS_RULES.md` 或專門的 TODO 流程文件）來規範。
+- AI 在引用這些規則時，只需說明「遵守團隊 TODO 流程」即可，不必在本檔展開實作細節，避免混淆「通用規則」與「某專案的具體做法」。
+
+---
+
+## 8. 專案理解進度勾選表（建議模板）
+
+> 建議每個專案準備一份「理解進度勾選表」，放在 `PROJECT_OVERVIEW.md`
+> 或獨立檔案中，讓 AI 與人類都能一眼看出目前理解層級。
+
+```markdown
+## 專案理解進度（AI 自評）
+
+> 說明：這不是 TODO，而是「AI 對專案理解程度」的快照。
+
+### 階段一（0–50）：探索期
+
+- [ ] 已完成初步掃描（README、主要目錄結構）
+- [ ] 已寫一份「掃描紀錄 / 初步印象」note
+- [ ] 已建立一份「後續要閱讀檔案清單」，以 `- [ ] 檔案路徑` 方式列出，閱讀完成後逐項打勾
+
+### 階段二（50–70）：模組成形
+
+- [ ] PROJECT_OVERVIEW 初版已產出
+- [ ] FRONTEND_ARCH 初版已產出（若有前端）
+- [ ] API_OVERVIEW 初版已產出（若有需要）
+- [ ] 至少 1–3 個關鍵功能的 ui-flow-<feature>.md 已完成
+
+### 階段三（70–90）：整體成形
+
+- [ ] TECH_STACK_OVERVIEW 已建立，列出前後端/DB/Infra/DevOps 技術
+- [ ] ARCH_OVERVIEW 已建立，包含整體架構 Mermaid 圖
+- [ ] （選用）DEPLOYMENT_OVERVIEW 已建立或已在 PROJECT_OVERVIEW 中說明
+- [ ] 早期零散筆記的有效內容已搬進上述總覽檔
+
+### 階段四（90–100）：成熟維運
+
+- [ ] 定期檢查並更新所有總覽文件（Overview / Arch / Tech Stack / Deployment）
+- [ ] 每次重大變更（架構/技術棧）都有回寫到對應文件
+- [ ] 已能為新成員 / 新 AI 指出「先讀哪幾份文件」作為入口
+```
+
+---
+
+## （以下為舊版內容，僅保留作歷史參考）
+
 # ELF EXPRESS - AI 專案上手流程（0 → 100）
 
-本文件說明：當有新的 AI 加入 ELF EXPRESS 的任一專案時，應該如何從 0 開始理解專案，逐步做到「可以安全地修改程式碼」。
+本文件說明：當有新的 AI 加入 ELF
+EXPRESS 的任一專案時，應該如何從 0 開始理解專案，逐步做到「可以安全地修改程式碼」。
 
 ## 0. 一律先讀的規則與流程
 
 1. **專案協作規則**
-
-   - 檔案：`docs/ELF_EXPRESS_RULES.md`
-   - 內容重點：
-     - 最小改動、安全、可回滾。
-     - 每日 todo markdown：`docs/todo/todoYYYY-MM-DD-XX.md`。
-     - 分兩階段寫筆記：
-       - 分析＋方案。
-       - 修改內容＋驗證結果。
-     - 技術棧一律依官方文件與標準 API。
+    - 檔案：`docs/ELF_EXPRESS_RULES.md`
+    - 內容重點：
+        - 最小改動、安全、可回滾。
+        - 每日 todo markdown：`docs/todo/todoYYYY-MM-DD-XX.md`。
+        - 分兩階段寫筆記：
+            - 分析＋方案。
+            - 修改內容＋驗證結果。
+        - 技術棧一律依官方文件與標準 API。
 
 2. **團隊開發流程圖（含 AI 協作）**
-
-   - 範本檔：`docs/todo/todoYYYY-MM-DD-XX.md`
-   - 使用 mermaid 描述：
-     - 發現問題 → 讀規則／舊 todo → 分析＋風險 → 寫「分析與方案」→ 實作 → 驗證 → 在同一 todo 補「修改內容與驗證結果」。
+    - 範本檔：`docs/todo/todoYYYY-MM-DD-XX.md`
+    - 使用 mermaid 描述：
+        - 發現問題 → 讀規則／舊 todo
+          → 分析＋風險 → 寫「分析與方案」→ 實作 → 驗證 → 在同一 todo 補「修改內容與驗證結果」。
 
 > **任何新 AI 進專案，第一件事就是閱讀上述兩個檔案。**
 
@@ -42,16 +280,19 @@ docs/
 說明：
 
 - **不要為同一個網站／專案大量新增不同架構檔**：
-  - 若已有 `PROJECT_OVERVIEW.md`、`FRONTEND_ARCH.md`，請優先在這兩個檔案內增修小節，而不是再開新的「overview-2.md / arch-2.md / notes-\*.md」。
-  - 對於細節或一次性的實驗，請優先記在**當日的 todo 檔**，而不是多開新的頂層文件。
+    - 若已有
+      `PROJECT_OVERVIEW.md`、`FRONTEND_ARCH.md`，請優先在這兩個檔案內增修小節，而不是再開新的「overview-2.md
+      / arch-2.md / notes-\*.md」。
+    - 對於細節或一次性的實驗，請優先記在**當日的 todo 檔**，而不是多開新的頂層文件。
 - **API_OVERVIEW.md（可選）只作為 API 總覽／索引**：
-  - 不列出每一支 endpoint 的所有欄位，只整理：
-    - API 類別或領域 → 對應的前端模組（例如某資料夾或路由區段）。
-    - 正式 API 文件放在哪裡（例如 Swagger 網址、`apiDoc.md` 等）。
-  - 若專案已經有完整 API 文件（Swagger、`apiDoc.md`），請優先在 `PROJECT_OVERVIEW.md` 中說明「API 文件在哪裡」，必要時再新增一份輕量的 `API_OVERVIEW.md` 當導覽索引即可。
+    - 不列出每一支 endpoint 的所有欄位，只整理：
+        - API 類別或領域 → 對應的前端模組（例如某資料夾或路由區段）。
+        - 正式 API 文件放在哪裡（例如 Swagger 網址、`apiDoc.md` 等）。
+    - 若專案已經有完整 API 文件（Swagger、`apiDoc.md`），請優先在 `PROJECT_OVERVIEW.md`
+      中說明「API 文件在哪裡」，必要時再新增一份輕量的 `API_OVERVIEW.md` 當導覽索引即可。
 - **ui-flow-`<feature>`.md 僅用於少數「需要深入理解」的功能**：
-  - 例如：datetime refactor、某個複雜設計器、核心授權流程。
-  - 若只是小功能或一次性 bugfix，通常只需要 todo 紀錄，不需要獨立 `ui-flow-*.md`。
+    - 例如：datetime refactor、某個複雜設計器、核心授權流程。
+    - 若只是小功能或一次性 bugfix，通常只需要 todo 紀錄，不需要獨立 `ui-flow-*.md`。
 
 > 簡單講：
 >
@@ -65,14 +306,12 @@ docs/
 第一次接手專案時：
 
 1. 建立當日第一個 todo 檔，例如：
-
-   - `docs/todo/todo2025-11-23-01.md`
+    - `docs/todo/todo2025-11-23-01.md`
 
 2. 在該檔的「分析與方案」區段，AI 應先寫下：
-
-   - 專案來源與目的（如果已知）。
-   - 預計閱讀的檔案與目錄（掃描計畫）。
-   - 預計產出哪些總覽文件（例如 `PROJECT_OVERVIEW.md`、`FRONTEND_ARCH.md`、`ui-flow-xxx.md` 等）。
+    - 專案來源與目的（如果已知）。
+    - 預計閱讀的檔案與目錄（掃描計畫）。
+    - 預計產出哪些總覽文件（例如 `PROJECT_OVERVIEW.md`、`FRONTEND_ARCH.md`、`ui-flow-xxx.md` 等）。
 
 3. 尚未修改任何程式碼，只是 **記錄「準備怎麼理解專案」**。
 
@@ -83,31 +322,27 @@ docs/
 **目標：** 讓任何人／AI 打開一份檔案，就能快速理解專案整體輪廓。
 
 1. 建議檔名：
-
-   - `docs/PROJECT_OVERVIEW.md`
+    - `docs/PROJECT_OVERVIEW.md`
 
 2. AI 應閱讀的檔案（可依專案調整）：
-
-   - `README.md`
-   - 核心架構文件（若已有）：例如 `docs/*architecture*.md`、`docs/*overview*.md`
-   - 主要建置／環境檔：`package.json`、`pnpm-lock.yaml`、`vite.config.*`、`tsconfig.*` 等。
+    - `README.md`
+    - 核心架構文件（若已有）：例如 `docs/*architecture*.md`、`docs/*overview*.md`
+    - 主要建置／環境檔：`package.json`、`pnpm-lock.yaml`、`vite.config.*`、`tsconfig.*` 等。
 
 3. 在 `PROJECT_OVERVIEW.md` 中至少包含：
-
-   - 專案目標與 Domain（例如：低程式碼平台、ERP、物流系統…）。
-   - 技術棧（前端、後端、DB、CI/CD 等）。
-   - 目錄結構大綱：
-     - `src/` 下各資料夾的職責說明。
-     - 重要的 `docs/` 與 `config/` 檔位置。
-   - 啟動與 build：
-     - 開發指令（例如 `npm run dev`）。
-     - build 指令（例如 `npm run build`）。
-     - 任何特別的前置步驟（如 env 設定）。
+    - 專案目標與 Domain（例如：低程式碼平台、ERP、物流系統…）。
+    - 技術棧（前端、後端、DB、CI/CD 等）。
+    - 目錄結構大綱：
+        - `src/` 下各資料夾的職責說明。
+        - 重要的 `docs/` 與 `config/` 檔位置。
+    - 啟動與 build：
+        - 開發指令（例如 `npm run dev`）。
+        - build 指令（例如 `npm run build`）。
+        - 任何特別的前置步驟（如 env 設定）。
 
 4. 寫完後，在當日的 `todoYYYY-MM-DD-01.md` 中「修改內容與驗證」區段補充：
-
-   - 讀了哪些檔、產出了哪些檔（例如：新增 `PROJECT_OVERVIEW.md`）。
-   - 對專案的第一版理解摘要（幾行文字即可）。
+    - 讀了哪些檔、產出了哪些檔（例如：新增 `PROJECT_OVERVIEW.md`）。
+    - 對專案的第一版理解摘要（幾行文字即可）。
 
 ---
 
@@ -116,27 +351,23 @@ docs/
 **目標：** 清楚說明前端應用是如何被啟動、如何組成。
 
 1. 建議檔名：
-
-   - `docs/FRONTEND_ARCH.md`
+    - `docs/FRONTEND_ARCH.md`
 
 2. AI 應額外閱讀的檔案：
-
-   - 入口：`src/main.ts` 或 `src/main.js`
-   - 路由：`src/router/**`
-   - 狀態：`src/store/**`、`src/pinia/**` 等
-   - 全域組件註冊：例如 `src/components/registerGlobComp.ts`
-   - UI 架構相關 docs：如 `docs/ui-architecture.md`
+    - 入口：`src/main.ts` 或 `src/main.js`
+    - 路由：`src/router/**`
+    - 狀態：`src/store/**`、`src/pinia/**` 等
+    - 全域組件註冊：例如 `src/components/registerGlobComp.ts`
+    - UI 架構相關 docs：如 `docs/ui-architecture.md`
 
 3. 在 `FRONTEND_ARCH.md` 中至少包含：
-
-   - App 啟動流程（main 檔流程圖或條列）。
-   - Router 結構與主要模組（系統管理、業務模組、開發工具…）。
-   - 狀態管理策略（Pinia/Vuex 模組、分層方式）。
-   - 全域 UI 元件或 Design System（例如 Jnpf 元件群組、Ant Design Vue 的使用方式）。
+    - App 啟動流程（main 檔流程圖或條列）。
+    - Router 結構與主要模組（系統管理、業務模組、開發工具…）。
+    - 狀態管理策略（Pinia/Vuex 模組、分層方式）。
+    - 全域 UI 元件或 Design System（例如 Jnpf 元件群組、Ant Design Vue 的使用方式）。
 
 4. 同樣在當日 todo 檔中更新「修改內容與驗證」區段：
-
-   - 紀錄新增 `FRONTEND_ARCH.md`，並簡述其內容與用途。
+    - 紀錄新增 `FRONTEND_ARCH.md`，並簡述其內容與用途。
 
 ---
 
@@ -145,25 +376,22 @@ docs/
 當有特定子系統或功能需要深入理解（例如本次 JNPF 的 datetime refactor）：
 
 1. 建議檔名格式：
-
-   - `docs/ui-flow-<feature>.md`
-   - 例如：`docs/ui-flow-datetime-refactor.md`
+    - `docs/ui-flow-<feature>.md`
+    - 例如：`docs/ui-flow-datetime-refactor.md`
 
 2. AI 應：
-
-   - 閱讀相關模組路徑（例如：`src/views/systemData/dataInterface/**`、`src/components/ColumnDesign/**`）。
-   - 找出與該功能相關的關鍵檔案（元件、utils、hook 等）。
+    - 閱讀相關模組路徑（例如：`src/views/systemData/dataInterface/**`、`src/components/ColumnDesign/**`）。
+    - 找出與該功能相關的關鍵檔案（元件、utils、hook 等）。
 
 3. 在 `ui-flow-<feature>.md` 中：
+    - 使用 mermaid 畫出：
+        - 使用者操作流程（從哪個畫面進入、點哪些按鈕）。
+        - 資料流向（API → store → 元件 → UI）。
+    - 條列說明每個節點的大致職責。
 
-   - 使用 mermaid 畫出：
-     - 使用者操作流程（從哪個畫面進入、點哪些按鈕）。
-     - 資料流向（API → store → 元件 → UI）。
-   - 條列說明每個節點的大致職責。
-
-4. 在對應主題的 todo 檔（例如 `todo2025-11-22-01.md`）的「分析與方案」或「修改內容與驗證」區段引用此文件：
-
-   - `參考：docs/ui-flow-datetime-refactor.md`。
+4. 在對應主題的 todo 檔（例如
+   `todo2025-11-22-01.md`）的「分析與方案」或「修改內容與驗證」區段引用此文件：
+    - `參考：docs/ui-flow-datetime-refactor.md`。
 
 ---
 
@@ -172,30 +400,26 @@ docs/
 > 一個主題 = 一個 todo 檔。同一檔有兩輪主要寫作：先寫「分析＋方案」，後寫「修改內容＋驗證」。
 
 1. 檔名格式：
-
-   - `docs/todo/todoYYYY-MM-DD-XX.md`
-   - 如：`todo2025-11-22-01.md`、`todo2025-11-22-02.md`。
+    - `docs/todo/todoYYYY-MM-DD-XX.md`
+    - 如：`todo2025-11-22-01.md`、`todo2025-11-22-02.md`。
 
 2. 第一輪：**分析與方案**
-
-   - 說明要處理的問題／需求。
-   - 目前觀察到的行為／錯誤。
-   - 擬定的方案 A/B（含優缺點）。
-   - 計畫閱讀／修改的檔案列表。
+    - 說明要處理的問題／需求。
+    - 目前觀察到的行為／錯誤。
+    - 擬定的方案 A/B（含優缺點）。
+    - 計畫閱讀／修改的檔案列表。
 
 3. 第二輪：**修改內容與驗證**
-
-   - 實際修改了哪些檔案、哪些段落（可簡要列出）。
-   - 執行了哪些指令（`npm run dev`、`npm run build`、測試指令）。
-   - 結果如何（成功／失敗，若失敗要貼關鍵錯誤訊息）。
-   - 下一步的 TODO（若仍有未解問題）。
+    - 實際修改了哪些檔案、哪些段落（可簡要列出）。
+    - 執行了哪些指令（`npm run dev`、`npm run build`、測試指令）。
+    - 結果如何（成功／失敗，若失敗要貼關鍵錯誤訊息）。
+    - 下一步的 TODO（若仍有未解問題）。
 
 4. 若同一天有不同主題：
-
-   - 為每個主題使用新的流水號：`-02`, `-03`…。
-   - 例如：
-     - `todo2025-11-22-01.md`：datetime refactor。
-     - `todo2025-11-22-03.md`：v-code-diff / build 問題。
+    - 為每個主題使用新的流水號：`-02`, `-03`…。
+    - 例如：
+        - `todo2025-11-22-01.md`：datetime refactor。
+        - `todo2025-11-22-03.md`：v-code-diff / build 問題。
 
 ---
 
@@ -206,8 +430,10 @@ docs/
 > 1. 請先完整閱讀 `docs/ELF_EXPRESS_RULES.md`。
 > 2. 然後閱讀 `README.md`、`package.json`、`src/main.ts` 與任何現有的架構文件。
 > 3. 建立 `docs/todo/todoYYYY-MM-DD-01.md`：
->    - 在「分析與方案」區段，寫下你對專案的初步理解與接下來的掃描計畫。
+>     - 在「分析與方案」區段，寫下你對專案的初步理解與接下來的掃描計畫。
 > 4. 依照上面的流程，協助我產出 `docs/PROJECT_OVERVIEW.md` 與 `docs/FRONTEND_ARCH.md`。
-> 5. 之後每個新主題（例如某個 refactor 或 bugfix），請使用新的 `todoYYYY-MM-DD-XX.md` 按照「分析 → 實作 → 驗證」的方式紀錄整個過程。
+> 5. 之後每個新主題（例如某個 refactor 或 bugfix），請使用新的 `todoYYYY-MM-DD-XX.md`
+>    按照「分析 → 實作 → 驗證」的方式紀錄整個過程。
 
-只要你遵守這份 `ELF_AI_ONBOARDING.md` 加上 `ELF_EXPRESS_RULES.md`，就能從 0 穩定地把這個專案「讀懂」，再安全地進入實作階段。
+只要你遵守這份 `ELF_AI_ONBOARDING.md` 加上
+`ELF_EXPRESS_RULES.md`，就能從 0 穩定地把這個專案「讀懂」，再安全地進入實作階段。

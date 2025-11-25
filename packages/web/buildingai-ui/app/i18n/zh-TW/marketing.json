@@ -1,0 +1,96 @@
+{
+    "backend": {
+        "recharge": {
+            "rechargeInstructions": [
+                "1.儲值成功後不支持退款或反向兌換為人民幣；",
+                "2.儲值後的電力值不會過期，但無法提現、轉贈；",
+                "3.支付完成可能需要等待一會才能到帳，如一直未到帳，請提供你的手機帳號，聯絡我們；",
+                "4.用戶不得通過未經得到許可的第三方渠道進行儲值，不得透過惡意退費等不正當手段獲取帳戶餘額，否則由此造成的損失由用戶自行承擔；"
+            ],
+            "rechargeInstructionsTitle": "儲值說明",
+            "saveSuccess": "保存成功",
+            "saveFailed": "保存失敗",
+            "statusTitle": "功能狀態",
+            "statusDescription": "啟用後用戶可以訪問儲值功能",
+            "rechargeRulesTitle": "儲值規則",
+            "rechargeInstructionsDescription": "設置儲值規則",
+            "tab": {
+                "rechargeValue": "儲值數量",
+                "freeQuantity": "贈送數量",
+                "price": "價格",
+                "label": "標籤",
+                "status": "狀態",
+                "action": "操作",
+                "priceUnit": "元"
+            },
+            "button": {
+                "save": "保存",
+                "new": "新建套餐"
+            }
+        }
+    },
+    "frontend": {
+        "recharge": {
+            "detail": {
+                "title": "積分記錄",
+                "remainingPower": "剩餘積分",
+                "rechargePower": "儲值積分",
+                "giftPower": "儲值贈送",
+                "dailyGiftPower": {
+                    "title": "每日贈送",
+                    "giftPower": "贈送積分",
+                    "powerValidity": "積分有效期"
+                },
+                "changeDetail": "變動類型",
+                "aiName": "智慧體/應用名",
+                "changeAmount": "變動數量",
+                "changeTime": "日期",
+                "tab": {
+                    "all": "全部",
+                    "consume": "消耗",
+                    "get": "獲取"
+                },
+                "consumeSourceDesc": "來源",
+                "remark": "備註"
+            },
+            "noOptionSelected": "請選擇儲值套餐",
+            "orderNotFound": "訂單不存在",
+            "continueRecharge": "繼續儲值",
+            "viewRecords": "查看記錄",
+            "powerBalance": "積分餘額",
+            "selectRechargePackage": "選擇儲值套餐",
+            "paymentMethod": "支付方式",
+            "alipay": "支付寶支付",
+            "wechatPay": "微信支付",
+            "add": "加贈",
+            "power": "積分",
+            "rechargeInstructions": {
+                "title": "儲值說明",
+                "content": "暫無儲值說明"
+            },
+            "noRechargeOptions": "暫無儲值選項",
+            "total": "合計",
+            "use": "請使用",
+            "pay": "掃碼支付",
+            "contact": "如遇問題無法解決時，請聯絡站點管理員",
+            "agreement": "支付即代表你同意",
+            "serviceTerms": "服務條款",
+            "payment": "支付協議",
+            "immediatelyPurchase": "立即購買",
+            "wxPay": "微信支付",
+            "alipayPay": "支付寶支付",
+            "qrCodeFailed": "二維碼生成失敗",
+            "rechargeSuccess": "儲值成功",
+            "rechargeSuccessTip": "儲值成功，積分已到帳",
+            "paySuccess": "支付成功",
+            "payFailed": "支付失敗",
+            "cancelPay": "取消支付",
+            "notOpen": "暫未開放",
+            "notOpenTip": "該功能網站管理員暫未開放，敬請期待。",
+            "back": "返回上一頁",
+            "qrCodeExpired": "二維碼失效，請刷新",
+            "refreshQrCode": "刷新二維碼",
+            "systemTip": "系統提示"
+        }
+    }
+}

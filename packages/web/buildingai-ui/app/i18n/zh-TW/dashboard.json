@@ -1,0 +1,59 @@
+{
+    "errors": {
+        "fetchFailed": "獲取 Dashboard 數據失敗:",
+        "fetchFailedMessage": "獲取數據失敗，請稍後重試"
+    },
+    "timeRange": {
+        "last7Days": "近7天",
+        "last15Days": "近15天",
+        "last30Days": "近30天"
+    },
+    "chart": {
+        "visit": "訪問",
+        "register": "註冊",
+        "revenue": "收入",
+        "order": "訂單"
+    },
+    "userStats": {
+        "title": "用戶統計",
+        "increase": "同比昨天增",
+        "decrease": "同比昨天降",
+        "unit": "人",
+        "todayNew": "今日新增",
+        "activeUsers": "活躍用戶",
+        "totalUsers": "總用戶數"
+    },
+    "orderStats": {
+        "title": "訂單統計",
+        "increase": "同比昨天增",
+        "decrease": "同比昨天降",
+        "unit": "個",
+        "todayOrders": "今日訂單",
+        "totalOrders": "總訂單數",
+        "totalAmount": "總金額"
+    },
+    "chatStats": {
+        "title": "對話統計",
+        "increase": "同比昨天增",
+        "decrease": "同比昨天降",
+        "unit": "次",
+        "todayConversations": "今日對話",
+        "totalConversations": "總對話數",
+        "totalTokens": "總Token數"
+    },
+    "chartTitles": {
+        "userTrend": "用戶訪問與註冊趨勢",
+        "revenueTrend": "收入與訂單趨勢"
+    },
+    "ranking": {
+        "tokenUsage": "Token 使用排行",
+        "model": "模型",
+        "provider": "供應商",
+        "conversations": "對話",
+        "noData": "暫無數據",
+        "extensionUsage": "應用使用排行",
+        "totalExtensions": "總應用數：",
+        "enabledExtensions": "已啟用：",
+        "usageCount": "使用次數"
+    }
+}

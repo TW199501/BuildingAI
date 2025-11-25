@@ -1,6 +1,7 @@
 # UI Flow - Install 安裝精靈流程（草稿）
 
-> 狀態：已完成前端 install 頁面第一輪閱讀，以下內容根據 `app/pages/install` 及相關 composable 整理；與後端 API 更細欄位對應仍待後續若有需要再補充。
+> 狀態：已完成前端 install 頁面第一輪閱讀，以下內容根據 `app/pages/install`
+> 及相關 composable 整理；與後端 API 更細欄位對應仍待後續若有需要再補充。
 
 ## 1. 流程目的與範圍
 
@@ -18,7 +19,8 @@
 > 目標：從「系統尚未初始化」到「安裝完成可以正常使用」的完整頁面流。
 
 - **入口路由與 layout**
-  - 當系統尚未初始化時，`appStore.checkSystemInitialization(path)` 在 `route.global.ts` 中會將使用者從任意路徑導向 `/install`。
+  - 當系統尚未初始化時，`appStore.checkSystemInitialization(path)` 在 `route.global.ts`
+      中會將使用者從任意路徑導向 `/install`。
   - `app/pages/install/index.vue` 透過 `definePageMeta({ layout: "full-screen", auth: false })`：
     - 使用 `full-screen` 佈局。
     - `auth: false`，不需登入即可進入安裝流程。
@@ -28,8 +30,15 @@
     - 動態標題動畫：使用 `TrueFocus` 顯示 `install.welcome.title` 文案。
     - 說明文字：`install.welcome.subtitle`。
     - 行為按鈕：
-      - 「查看文件」：`<UButton>` 連結 `https://www.buildingai.cc/docs/introduction/start`（新視窗開啟）。
-      - 「開始使用」：點擊後觸發 `@next` 事件，由父層 `index.vue` 的 `handleWelcomeNext` 將 `currentStep` 設為 `1` 進入下一步。
+      - 「查看文件」：`<UButton>` 連結
+              `https://www.buildingai.cc/docs/introduction/start`（新視窗開啟）。
+      - 「開始使用」：點擊後觸發 `@next` 事件，由父層 `index.vue` 的 `handleWelcomeNext` 將
+              `currentStep` 設為 `1` 進入下一步。
+    - 語言切換：畫面右上角的 `<USelect>` 綁定 `locale`（`LanguageCode`），資料源為
+          `languageOptions`；切換後會呼叫 `setLocale` 並更新 `nuxt-ui-language` cookie，使後續頁面沿用
+          相同語系。Nuxt `defaultLocale` 已在 `packages/web/@buildingai/nuxt/src/nuxt.config.ts` 改為
+          `"zh-TW"`，因此第一次開啟安裝畫面就會顯示繁體中文；若使用者改選其它語言，cookie 將覆蓋
+          預設值並套用至整個流程。
 
 - **Step 1：管理員帳號設定（Step1）**
   - 當 `currentStep === 1` 顯示，主要功能：
@@ -59,7 +68,8 @@
       - 使用 `BdUploader` 搭配 `apiUploadInitFile` 處理檔案上傳（限制副檔名與單檔上傳）。
     - 操作按鈕：
       - 「上一步」：emit `prev` 事件，父層 `handlePrevStep()` 將 `currentStep` 重設為 `1`。
-      - 「下一步」：提交表單成功後 emit `submit` 事件，父層 `handleWebsiteSubmit()` 呼叫 `submitWebsiteConfig()`：
+      - 「下一步」：提交表單成功後 emit `submit` 事件，父層 `handleWebsiteSubmit()` 呼叫
+              `submitWebsiteConfig()`：
         - 若回傳 `true`，將 `currentStep` 設為 `3`，進入完成頁面。
 
 - **Step 3：安裝完成頁（Step3）**
@@ -67,10 +77,12 @@
     - 告知使用者安裝已完成（`install.completeTitle` / `install.completeDescription`）。
     - 提供兩個導向選項：
       - 「前往首頁」：emit `goHome` → `useInstall().goToHome()` → `router.push("/")`。
-      - 「前往控制台」：emit `goConsole` → `useInstall().goToConsole()` → `router.push("/console")`。
+      - 「前往控制台」：emit `goConsole` → `useInstall().goToConsole()` →
+              `router.push("/console")`。
 
 - **結束條件與後續行為（概念層面）**
-  - 安裝成功後，`apiInitializeSystem` 回傳 `isInitialized = true`，`appStore.getSystemInfo()` 應更新系統狀態為已初始化。
+  - 安裝成功後，`apiInitializeSystem` 回傳 `isInitialized = true`，`appStore.getSystemInfo()`
+      應更新系統狀態為已初始化。
   - 之後 `appStore.checkSystemInitialization()` 再被呼叫時：
     - 對 `/install` 路徑會轉回首頁 `/`。
     - 對其他路徑則不再強制導向安裝流程。
@@ -93,11 +105,14 @@
   - Step1：
     - 使用 `yup` schema 驗證帳號密碼與是否勾選隱私協議。
     - 額外提供密碼強度檢查：
-      - 依長度、數字、小寫字母、大寫字母等規則計分，映射到不同顏色與文案（weak / medium / strong）。
-      - 供使用者即時了解密碼安全程度，但並不直接阻止提交（提交依照 schema 與 `agreedToTerms`）。
+      - 依長度、數字、小寫字母、大寫字母等規則計分，映射到不同顏色與文案（weak / medium /
+              strong）。
+      - 供使用者即時了解密碼安全程度，但並不直接阻止提交（提交依照 schema 與
+              `agreedToTerms`）。
   - Step2：
     - 確保網站名稱必填，其餘欄位為選填.
-    - 透過 `BdUploader + apiUploadInitFile` 處理 Logo / Icon 檔案上傳，前端只保存回傳的檔案 URL（或標識）。
+    - 透過 `BdUploader + apiUploadInitFile` 處理 Logo /
+          Icon 檔案上傳，前端只保存回傳的檔案 URL（或標識）。
 
 - **初始化 API 呼叫：`apiInitializeSystem`**
   - 由 `useInstall().submitWebsiteConfig()` 發起：
@@ -107,10 +122,12 @@
         - `username`, `password`, `confirmPassword`.
         - 選填欄位（若為空字串則轉為 `undefined`）：`nickname`, `email`, `phone`, `avatar`.
       - 網站設定相關欄位：
-        - `websiteName`, `websiteDescription`, `websiteLogo`, `websiteIcon` 對應自 `websiteForm`.
+        - `websiteName`, `websiteDescription`, `websiteLogo`, `websiteIcon` 對應自
+                  `websiteForm`.
   - API 回應處理：
     - 若回傳 `result.isInitialized === true`：
-      - 顯示成功 toast（標題 `install.successTitle`，描述 `install.steps.complete.successMessage`）。
+      - 顯示成功 toast（標題 `install.successTitle`，描述
+              `install.steps.complete.successMessage`）。
       - 若回傳 `result.token`：
         - 呼叫 `userStore.setToken(result.token)` 設定登入 token.
         - 接著 `await userStore.getUser()` 拿到目前使用者資訊.
@@ -121,35 +138,44 @@
     - 若 `result.isInitialized` 不為 true 或沒有回傳：
       - 回傳 `false`，使畫面停留在 Step2 以便使用者修正.
     - 發生例外時：
-      - 捕捉錯誤並顯示錯誤 toast（標題 `install.failureTitle`，內容為錯誤訊息或 `install.failureDescription`）。
+      - 捕捉錯誤並顯示錯誤 toast（標題 `install.failureTitle`，內容為錯誤訊息或
+              `install.failureDescription`）。
       - 回傳 `false`.
     - finally 區塊：
       - 重設 `isSubmittingWebsite` 為 `false`.
-      - 若 `appStore.siteConfig?.webinfo?.version` 存在，會以 `fetch` 向 `EXTENSION_API_URL/building-ai/{version}` 回報安裝統計（非阻塞性呼叫）。
+      - 若 `appStore.siteConfig?.webinfo?.version` 存在，會以 `fetch` 向
+              `EXTENSION_API_URL/building-ai/{version}` 回報安裝統計（非阻塞性呼叫）。
 
 ### 3.1 後端資料流與寫入目標（摘要）
 
 - **API 入口與 DTO**
   - 前端 `apiInitializeSystem`：
-    - `POST /consoleapi/system/initialize` → 轉發到後端 `@ConsoleController("system")`、`@Post("initialize")`.
+    - `POST /consoleapi/system/initialize` → 轉發到後端
+          `@ConsoleController("system")`、`@Post("initialize")`.
   - 後端 `initializeDto`：
     - 基於 `RegisterDto`（使用者註冊 DTO）去掉 `terminal`，並新增：
-      - `avatar?`, `websiteName?`, `websiteDescription?`, `websiteLogo?`, `websiteIcon?` 等欄位，均附帶字串驗證.
+      - `avatar?`, `websiteName?`, `websiteDescription?`, `websiteLogo?`, `websiteIcon?`
+              等欄位，均附帶字串驗證.
 
 - **SystemService.initialize 的核心步驟**
   - 建立超級管理員（root）帳號：
     - 使用 `userService.hashPassword` 加密密碼.
     - 透過 `userService.create` 或類似方法，在 `User` 實體上寫入：
-      - `username`, `password`, `isRoot=YES`, `nickname`（預設「超级管理员」）、`email`、`phone`、`avatar`（使用 dto 或隨機預設）、`source=CONSOLE`、`userNo` 等欄位.
+      - `username`, `password`, `isRoot=YES`,
+              `nickname`（預設「超级管理员」）、`email`、`phone`、`avatar`（使用 dto 或隨機預設）、`source=CONSOLE`、`userNo`
+              等欄位.
   - 寫入網站資訊設定：
     - 使用 `dictService.set(key, value, { group: "webinfo" })` 設定：
-      - `name`、`description`、`logo`、`icon`（分別對應前端的 `websiteName`、`websiteDescription`、`websiteLogo`、`websiteIcon`）。
+      - `name`、`description`、`logo`、`icon`（分別對應前端的
+              `websiteName`、`websiteDescription`、`websiteLogo`、`websiteIcon`）。
   - 標記系統已初始化：
     - `dictService.set("isInitialized", true, { group: SYSTEM_CONFIG })`.
     - 此旗標是 `getSystemInfo()` 與前端 `checkSystemInitialization()` 的判斷來源.
   - 自動登入與權限載入：
-    - 透過 `rolePermissionService.getUserRoles(user.id)` 與 `getUserPermissions(user.id)` 載入角色／權限資訊.
-    - 使用 `authService.userTokenService.createToken(...)` 產出登入 token 與過期時間，並記錄終端（PC）、IP 與 user-agent.
+    - 透過 `rolePermissionService.getUserRoles(user.id)` 與 `getUserPermissions(user.id)`
+          載入角色／權限資訊.
+    - 使用 `authService.userTokenService.createToken(...)`
+          產出登入 token 與過期時間，並記錄終端（PC）、IP 與 user-agent.
     - 更新管理員 `lastLoginAt` 欄位.
   - 回傳給前端的資料：
     - `isInitialized: true`.
@@ -159,11 +185,13 @@
 - **錯誤處理**
   - `SystemService.initialize` 捕捉到內部錯誤時，會使用：
     - `HttpErrorFactory.badRequest(error.message, error.data)` 拋出.
-  - 前端目前僅顯示 `error.message` 至 toast 中，`error.data` 的結構可在未來有需要時再開新 todo 深入整理（例如 mapping 成更友善的錯誤提示）。
+  - 前端目前僅顯示 `error.message` 至 toast 中，`error.data`
+      的結構可在未來有需要時再開新 todo 深入整理（例如 mapping 成更友善的錯誤提示）。
 
 ## 4. 與全域邏輯的關聯
 
-> 目標：說明安裝流程如何與整個系統的「已初始化／未初始化」邏輯配合，以及與全域狀態（appStore / userStore）的關係.
+> 目標：說明安裝流程如何與整個系統的「已初始化／未初始化」邏輯配合，以及與全域狀態（appStore /
+> userStore）的關係.
 
 - **路由層：`route.global.ts` 與 `/install`**
   - 在每次路由切換時，global middleware 都會先呼叫：
@@ -182,7 +210,8 @@
 
 - **再次訪問 `/install` 的行為（預期）**
   - 在系統已初始化的情況下：
-    - `checkSystemInitialization("/install")` 應回傳 `/` 之類的路徑，引導使用者回首頁或正常入口，而不是重新跑安裝精靈。
+    - `checkSystemInitialization("/install")` 應回傳 `/`
+          之類的路徑，引導使用者回首頁或正常入口，而不是重新跑安裝精靈。
 
 ## 5. 重要畫面與組件
 

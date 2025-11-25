@@ -1,0 +1,186 @@
+{
+    "tags": ["i18n", "frontend", "backend", "infra", "doc", "qa", "2025-11-27"],
+    "lastNodeId": 18,
+    "nodes": [
+        {
+            "kind": "Text",
+            "id": 1,
+            "name": "多國語言擴充 - 後續行動 (11/27)",
+            "tags": ["i18n", "frontend"],
+            "description": "針對繁體語系上線後的驗收、腳本強化與 Docker 建置優化。",
+            "nodes": [
+                {
+                    "kind": "Text",
+                    "id": 2,
+                    "name": "驗收與 QA",
+                    "tags": ["qa"],
+                    "description": null,
+                    "nodes": [
+                        {
+                            "kind": "Checkbox",
+                            "id": 3,
+                            "name": "完成 zh / zh-TW / en / jp smoke test（Install / Chat / Console）",
+                            "tags": ["qa", "frontend"],
+                            "description": "記錄測試頁面、日期與是否有語系缺字。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 4,
+                            "name": "產出語系切換畫面截圖並存入 docs/ui-flow-*",
+                            "tags": ["qa", "doc"],
+                            "description": "至少涵蓋 Install Step0、Console user menu、Profile。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 5,
+                            "name": "驗證 install 流程 cookie 初始化（nuxt-ui-language）",
+                            "tags": ["frontend"],
+                            "description": "確保匿名首次載入可自動套用 zh-TW，並記錄期望行為。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        }
+                    ],
+                    "collapsed": false
+                },
+                {
+                    "kind": "Text",
+                    "id": 6,
+                    "name": "翻譯腳本與語料",
+                    "tags": ["i18n", "frontend"],
+                    "description": null,
+                    "nodes": [
+                        {
+                            "kind": "Checkbox",
+                            "id": 7,
+                            "name": "重構 translate-i18n.mjs：動態讀取 language.ts",
+                            "tags": ["frontend", "devtool"],
+                            "description": "避免再度遺漏新語言，加入 schema 驗證與錯誤提示。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 8,
+                            "name": "擴充 scripts/README：記錄翻譯腳本使用方式",
+                            "tags": ["doc"],
+                            "description": "含 SOURCE_LANG、TARGET_LANGS 變更流程與常見錯誤排查。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 9,
+                            "name": "review zh-TW 語料：針對 console menu / permission 進行人工校對",
+                            "tags": ["i18n"],
+                            "description": "列出需再調整的字詞，回饋給翻譯來源。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        }
+                    ],
+                    "collapsed": false
+                },
+                {
+                    "kind": "Text",
+                    "id": 10,
+                    "name": "Docker / Build 優化",
+                    "tags": ["infra"],
+                    "description": null,
+                    "nodes": [
+                        {
+                            "kind": "Checkbox",
+                            "id": 11,
+                            "name": "撰寫 multi-stage Dockerfile 規格草稿",
+                            "tags": ["infra", "backend"],
+                            "description": "定義 build 階段（pnpm install + turbo build）與 runtime 階段，避免啟動時重新安裝。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 12,
+                            "name": "新增 docker-compose.override 範本：切換官方 Postgres/Redis 鏡像",
+                            "tags": ["infra"],
+                            "description": "提供示例 env（POSTGRES_IMAGE、REDIS_IMAGE），降低跨區拉取時間。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 13,
+                            "name": "記錄 docker:up 啟動流程與常見等待狀態",
+                            "tags": ["doc", "infra"],
+                            "description": "在 docs/todo 或 README 補充 nodejs 容器會先跑 pnpm install 的說明。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        }
+                    ],
+                    "collapsed": false
+                },
+                {
+                    "kind": "Text",
+                    "id": 14,
+                    "name": "文件與同步",
+                    "tags": ["doc", "pm"],
+                    "description": null,
+                    "nodes": [
+                        {
+                            "kind": "Checkbox",
+                            "id": 15,
+                            "name": "更新 UI Flow（login / console menu）語系段落",
+                            "tags": ["doc", "frontend"],
+                            "description": "記錄 zh-TW 預設與語言選單的互動流程。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 16,
+                            "name": "撰寫 11/27 每日里程碑摘要（docs/todo/2025-11-27-01.md）",
+                            "tags": ["doc"],
+                            "description": "延續 11/26 風格，記錄指令、問題與解法。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 17,
+                            "name": "對 PM / UX 報告多語系進展與未竟事項",
+                            "tags": ["pm"],
+                            "description": "整理簡短 bullet：已完成、待驗收、風險。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        },
+                        {
+                            "kind": "Checkbox",
+                            "id": 18,
+                            "name": "建立 issue：翻譯腳本自動化 + Docker build 規劃",
+                            "tags": ["pm", "infra"],
+                            "description": "供後續排 Sprint 時參考，連結對應 TODO。",
+                            "nodes": [],
+                            "collapsed": true,
+                            "checked": false
+                        }
+                    ],
+                    "collapsed": false
+                }
+            ],
+            "collapsed": false
+        }
+    ]
+}

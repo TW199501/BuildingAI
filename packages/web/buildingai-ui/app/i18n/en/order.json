@@ -44,7 +44,9 @@
                 "refundStatus": "Refund Status",
                 "serialNumber": "Transaction No",
                 "close": "Close",
-                "refund": "Request Refund"
+                "refund": "Request Refund",
+                "paid": "Paid",
+                "unpaid": "Unpaid"
             }
         }
     },

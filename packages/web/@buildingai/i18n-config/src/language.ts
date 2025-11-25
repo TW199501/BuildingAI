@@ -28,6 +28,7 @@ export const uiI18nMap: Record<string, string> = {
     zh: "zh-cn",
     en: "en",
     jp: "jp",
+    "zh-TW": "zh-tw",
 } as const;
 
 /**
@@ -36,7 +37,7 @@ export const uiI18nMap: Record<string, string> = {
  */
 export const navigatorMap: Record<string, string> = {
     "zh-cn": "zh",
-    "zh-tw": "zh",
+    "zh-tw": "zh-TW",
     "ja-jp": "jp",
     en: "en",
     "en-us": "en",
@@ -50,6 +51,8 @@ export const navigatorMap: Record<string, string> = {
 export const Language = {
     /** Chinese (Simplified) */
     ZH: "zh",
+    /** Chinese (Traditional) */
+    ZH_TW: "zh-TW",
     /** English */
     EN: "en",
     /** Japanese */
@@ -69,6 +72,12 @@ export const languageOptions: LanguageOption[] = [
         name: "简体中文",
         // icon: "🇨🇳",
         translationCode: "zh",
+    },
+    {
+        code: Language.ZH_TW,
+        name: "繁體中文",
+        // icon: "🇹🇼",
+        translationCode: "zh-TW",
     },
     {
         code: Language.EN,

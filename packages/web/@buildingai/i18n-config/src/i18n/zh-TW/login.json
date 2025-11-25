@@ -1,0 +1,73 @@
+{
+    "welcomeBack": "歡迎回來！ 👋",
+    "waitingForYou": "嘿，等你很久啦～快登錄看看有什麼新變化吧！",
+    "account": "帳號",
+    "usernamePlaceholder": "請輸入使用者名稱/信箱",
+    "password": "密碼",
+    "passwordPlaceholder": "請輸入密碼",
+    "forgotPassword": "忘記密碼？",
+    "passwordRule": "密碼建議為6-25位數字+字母或符號組合",
+    "strength": {
+        "empty": "請輸入密碼",
+        "weak": "密碼強度：弱",
+        "medium": "密碼強度：中",
+        "strong": "密碼強度：強",
+        "met": " - 要求已滿足",
+        "notMet": " - 要求未滿足"
+    },
+    "requirements": {
+        "minLength8": "建議 8 個字元",
+        "number": "建議包含 1 個數字",
+        "lowercase": "建議包含 1 個小寫字母",
+        "uppercase": "建議包含 1 個大寫字母"
+    },
+    "agreement": "已閱讀並同意 ",
+    "userAgreement": "用戶協議",
+    "and": "和",
+    "privacyPolicy": "隱私政策",
+    "register": "註冊帳號",
+    "loginNow": "立即登錄",
+    "orLoginTo": "或",
+    "title": "登入或註冊",
+    "subtitle": "您將獲得更加智慧的回覆並能上傳文件、圖片等內容。",
+    "continueWithAccount": "繼續使用帳號密碼登入",
+    "continueWithWechat": "繼續使用微信登錄",
+    "bindMobile": "綁定手機號碼",
+    "registerTitle": "帳號註冊",
+    "registerWelcome": "歡迎成為我們的新成員，探索更多強大功能即刻開始。🚀",
+    "confirmPassword": "確認密碼",
+    "confirmPasswordPlaceholder": "請再次輸入密碼",
+    "backToLogin": "返回登錄",
+    "registerNow": "立即註冊",
+    "validation": {
+        "accountRequired": "請輸入帳號",
+        "accountMinLength": "帳號長度不能少於3個字元",
+        "accountMaxLength": "帳號長度不能超過20個字元",
+        "emailRequired": "請輸入信箱",
+        "emailInvalid": "請輸入有效的信箱地址",
+        "passwordRequired": "請輸入密碼",
+        "passwordMinLength": "密碼長度不能少於6個字元",
+        "passwordMaxLength": "密碼長度不能超過25個字元",
+        "passwordFormat": "密碼必須為數字，字母或符號組合",
+        "confirmPasswordRequired": "請確認密碼",
+        "passwordMismatch": "兩次輸入的密碼不一致"
+    },
+    "messages": {
+        "agreementRequired": "請先同意隱私協議和服務條款",
+        "agreementTitle": "溫馨提示",
+        "agreementModal": {
+            "title": "服務協議及隱私保護",
+            "prefix": "確認即表示你已閱讀並同意{appName}的",
+            "confirm": "同意",
+            "cancel": "不同意",
+            "appNameFallback": "本服務"
+        },
+        "registerFailed": "註冊失敗",
+        "loginFailed": "登錄失敗"
+    },
+    "placeholders": {
+        "enterAccount": "請輸入帳號",
+        "enterPassword": "請輸入密碼",
+        "enterPasswordAgain": "請再次輸入密碼"
+    }
+}

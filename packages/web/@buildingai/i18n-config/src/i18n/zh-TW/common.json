@@ -1,0 +1,350 @@
+{
+    "power": "積分",
+    "loading": "載入中...",
+    "empty": "暫無數據",
+    "free": "免費",
+    "noMoreData": "沒有更多數據了",
+    "noSearchResults": "沒有找到匹配的結果",
+    "tryOtherKeywords": "請嘗試其他關鍵字",
+    "noAvailableKeyPool": "暫無可用的金鑰池",
+    "updateAt": "更新時間",
+    "goHome": "返回前台",
+    "goHomeText": "返回首頁",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "確認",
+    "edit": "編輯",
+    "delete": "刪除",
+    "preview": "預覽",
+    "upload": "上傳",
+    "clickUploadFile": "點擊上傳文件",
+    "zoomIn": "放大",
+    "zoomOut": "縮小",
+    "resetZoom": "重設縮放",
+    "expand": "展開",
+    "collapse": "收起",
+    "download": "下載",
+    "source": "原始碼",
+    "run": "運行",
+    "copy": "複製",
+    "now": "現在",
+    "month": {
+        "january": "一月",
+        "february": "二月",
+        "march": "三月",
+        "april": "四月",
+        "may": "五月",
+        "june": "六月",
+        "july": "七月",
+        "august": "八月",
+        "september": "九月",
+        "october": "十月",
+        "november": "十一月",
+        "december": "十二月"
+    },
+    "placeholder": {
+        "modelSelect": "請選擇模型",
+        "searchModel": "搜索模型...",
+        "mcpSelect": "請選擇MCP...",
+        "keySelect": "請選擇金鑰",
+        "searchKey": "搜索金鑰...",
+        "colorSelect": "請選擇顏色",
+        "dateSelect": "請選擇日期",
+        "dateRange": "請選擇日期範圍",
+        "timeSelect": "請選擇時間"
+    },
+    "tab": {
+        "system": "系統",
+        "custom": "自訂",
+        "all": "全部"
+    },
+    "menu": {
+        "system": "設置",
+        "workspace": "工作檯"
+    },
+    "label": {
+        "profile": "個人中心",
+        "personalRights": "個人權益"
+    },
+    "personalRights": {
+        "rechargeCenter": "儲值中心"
+    },
+    "dateGroup": {
+        "today": "今天",
+        "yesterday": "昨天",
+        "week": "7天內",
+        "month": "30天內",
+        "months": {
+            "january": "1月",
+            "february": "2月",
+            "march": "3月",
+            "april": "4月",
+            "may": "5月",
+            "june": "6月",
+            "july": "7月",
+            "august": "8月",
+            "september": "9月",
+            "october": "10月",
+            "november": "11月",
+            "december": "12月"
+        }
+    },
+    "settings": {
+        "general": "通用設置",
+        "mcpServer": "MCP設置",
+        "theme": "主題",
+        "language": "語言",
+        "languagePlaceholder": "選擇界面語言",
+        "timezone": "時區",
+        "timezonePlaceholder": "選擇時區",
+        "currentTime": "當前時間",
+        "colorPalette": "調色盤",
+        "radius": "圓角",
+        "radiusOptions": {
+            "none": "無圓角",
+            "xsmall": "極小",
+            "small": "小",
+            "medium": "中",
+            "large": "大"
+        },
+        "chat": {
+            "title": "聊天設置",
+            "windowStyle": "聊天窗口樣式",
+            "conversationMode": "對話模式",
+            "documentMode": "文件模式",
+            "codeHighlight": "代碼高亮主題",
+            "codeHighlightPlaceholder": "選擇代碼高亮主題",
+            "mermaidTheme": "Mermaid 主題",
+            "mermaidThemePlaceholder": "選擇Mermaid 主題"
+        }
+    },
+    "error": {
+        "404": {
+            "title": "頁面未找到",
+            "description": "抱歉，您訪問的頁面不存在或已被移除",
+            "goBack": "返回上一頁",
+            "goHome": "返回首頁"
+        }
+    },
+    "unit": {
+        "general": {
+            "item": "個",
+            "thing": "件",
+            "entry": "項",
+            "row": "行",
+            "column": "列",
+            "piece": "塊",
+            "set": "套",
+            "part": "部分",
+            "list": "條",
+            "number": "號"
+        },
+        "points": "積分",
+        "time": {
+            "second": "秒",
+            "minute": "分鐘",
+            "hour": "小時",
+            "day": "天",
+            "week": "周",
+            "month": "月",
+            "quarter": "季度",
+            "year": "年"
+        }
+    },
+    "time": {
+        "justNow": "剛剛",
+        "minutesAgo": "分鐘前",
+        "hoursAgo": "小時前",
+        "daysAgo": "天前",
+        "lastNDays": "近{ n }天",
+        "lastNMonth": "近{ n }個月",
+        "hour": "時",
+        "minute": "分",
+        "second": "秒"
+    },
+    "ai": {
+        "provider": "供應商",
+        "model": "模型",
+        "multimodalCapabilities": "多模態能力",
+        "video": "影片",
+        "audio": "音訊",
+        "vision": "視覺"
+    },
+    "theme": {
+        "dark": "暗黑",
+        "light": "亮色",
+        "system": "自動",
+        "theme": "主題",
+        "color": "主題顏色",
+        "neutralLabel": "中性色",
+        "red": "紅色",
+        "orange": "橙色",
+        "yellow": "黃色",
+        "lime": "青檸色",
+        "green": "綠色",
+        "teal": "藍綠色",
+        "cyan": "青色",
+        "blue": "藍色",
+        "indigo": "靛藍色",
+        "violet": "紫羅蘭色",
+        "purple": "紫色",
+        "fuchsia": "紫紅色",
+        "pink": "粉紅色",
+        "black": "黑色",
+        "slate": "灰色",
+        "gray": "灰色",
+        "zinc": "鋅色",
+        "stone": "石色",
+        "neutral": "中性灰"
+    },
+    "search": "搜索",
+    "tag": {
+        "tag": "標籤",
+        "addTag": "添加標籤",
+        "tags": "個標籤",
+        "allTags": "全部標籤",
+        "manageTags": "管理標籤",
+        "searchOrCreate": "搜索或創建",
+        "createTag": "創建 '{name}'",
+        "noTags": "沒有標籤",
+        "deleteTag": "刪除標籤",
+        "confirmDeleteTag": "確定刪除該標籤嗎？",
+        "createNewTag": "創建新標籤"
+    },
+    "message": {
+        "deleteSuccess": "刪除成功",
+        "deleteFailed": "刪除失敗",
+        "deleteBatchSuccess": "批次刪除成功",
+        "deleteBatchFailed": "批次刪除失敗",
+        "updateSuccess": "更新成功",
+        "createSuccess": "創建成功",
+        "uploadSuccess": "上傳成功",
+        "uploadFailed": "上傳失敗",
+        "downloadSuccess": "下載成功",
+        "downloadFailed": "下載失敗",
+        "copySuccess": "複製成功",
+        "copyFailed": "複製失敗",
+        "invalidUrl": "無效的URL格式",
+        "urlAdded": "URL添加成功",
+        "fileNotFound": "文件未找到",
+        "unsupportedFileType": "不支持的文件類型",
+        "maxCount": "最多只能上傳{ count }個文件",
+        "fileSizeTooLarge": "檔案大小不能超過{ size }",
+        "fileTypeNotMatch": "文件類型不匹配",
+        "uploading": "上傳中...",
+        "progress": "上傳進度"
+    },
+    "reference": {
+        "request": "請求",
+        "response": "響應",
+        "goToKnowledgeBase": "跳轉到知識庫",
+        "characters": "字元",
+        "callDetails": "調用詳情"
+    },
+    "request": {
+        "400": "錯誤請求400",
+        "401": "未授權401",
+        "403": "禁止訪問403",
+        "404": "未找到404",
+        "500": "伺服器錯誤500"
+    },
+    "chat": {
+        "newChat": "開啟新的對話",
+        "noChats": "暫無對話記錄",
+        "noChatsSubtitle": "點擊上方按鈕開始新對話",
+        "currentChat": "當前對話",
+        "confirmDelete": "永久刪除對話",
+        "confirmDeleteMessage": "刪除後，該對話將不可恢復。確認刪除嗎？",
+        "confirmDeleteAction": "確認刪除",
+        "editChatTitle": "編輯對話名稱",
+        "chatTitleLabel": "對話名稱",
+        "chatTitlePlaceholder": "請輸入對話名稱",
+        "chatTitleRequired": "對話名稱不能為空",
+        "expandSidebar": "展開側邊欄",
+        "collapseSidebar": "摺疊側邊欄",
+        "selectModel": "請先選擇模型",
+        "singleRunConsumption": "消耗 {price} 積分/次",
+        "and": "與 {name} 對話...",
+        "messages": {
+            "thinking": "AI正在思考中...",
+            "typing": "對方正在輸入中...",
+            "sendFailed": "消息發送失敗，請重試",
+            "me": "我",
+            "assistant": "AI助手",
+            "unknown": "未知",
+            "copied": "已複製",
+            "copy": "複製",
+            "retry": "重試",
+            "stopGeneration": "停止生成",
+            "enterQuestion": "請輸入你的問題",
+            "sendMessage": "發送消息",
+            "inputPlaceholder": "Hi~有什麼想問小助手的",
+            "uploadAttachmentTextOnly": "上傳附件（僅識別文字）",
+            "fileUploadLimit": "最多 {count} 個，每個 {size}MB，支持各類文件",
+            "supportsImage": "、圖片",
+            "inputUrlPlaceholder": "請輸入連結地址",
+            "optimizing": "正在最佳化中...",
+            "optimizeText": "最佳化文案",
+            "optimizeSuccess": "文案最佳化成功",
+            "optimizeEmpty": "最佳化結果為空",
+            "optimizeFailed": "文案最佳化失敗，請稍後重試",
+            "revertText": "恢復原始文案"
+        },
+        "toolCall": {
+            "start": "開始",
+            "from": "從",
+            "finished": "完成",
+            "calling": "正在調用",
+            "call": "調用",
+            "startCall": "開始調用工具",
+            "finishedCall": "完成調用工具",
+            "duration": "耗時"
+        },
+        "knowledgeCall": {
+            "start": "開始",
+            "from": "從",
+            "finished": "完成",
+            "calling": "正在檢索",
+            "call": "調用",
+            "duration": "耗時"
+        },
+        "reasoning": {
+            "thinking": "思考中...",
+            "completed": "已深度思考",
+            "duration": "用時 "
+        },
+        "context": {
+            "title": "對話上下文",
+            "description": "顯示當前對話的完整上下文資訊",
+            "system": "系統",
+            "user": "用戶",
+            "assistant": "助手"
+        }
+    },
+    "datasets": {
+        "retrieval": {
+            "vector": "向量檢索",
+            "fullText": "全文檢索",
+            "hybrid": "混合檢索"
+        }
+    },
+    "colorPicker": {
+        "presetColors": "預設顏色",
+        "clear": "清空",
+        "cssVariable": "CSS變數",
+        "setCssVariable": "設置CSS變數",
+        "setCssVariableDesc": "輸入CSS變數名來使用動態顏色",
+        "cssVariableInputTip": "請輸入CSS變數名，例如：--primary-color",
+        "currentCssVariable": "當前使用CSS變數",
+        "cssVariablePlaceholder": "--primary-color"
+    },
+    "proEditor": {
+        "placeholder": "請輸入內容...",
+        "img": "圖片",
+        "clearMarks": "清除格式",
+        "clearNodes": "清除節點",
+        "undo": "撤銷",
+        "redo": "重做",
+        "purple": "紫色"
+    }
+}

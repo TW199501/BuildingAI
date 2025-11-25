@@ -42,7 +42,7 @@ export interface ExtendedNuxtConfig extends NuxtConfig {
     };
     i18n?: {
         strategy?: "no_prefix" | "prefix_except_default" | "prefix" | "prefix_and_default";
-        defaultLocale?: "zh" | "en" | "jp";
+        defaultLocale?: "zh" | "zh-TW" | "en" | "jp";
         detectBrowserLanguage?: {
             useCookie?: boolean;
             cookieKey?: string;
@@ -336,7 +336,7 @@ export const configPresets: ExtendedNuxtConfig = {
     },
     i18n: {
         strategy: "no_prefix",
-        defaultLocale: "en",
+        defaultLocale: "zh-TW",
         detectBrowserLanguage: {
             useCookie: true,
             cookieKey: "nuxt-ui-language",

@@ -1,0 +1,70 @@
+{
+    "welcome": {
+        "title": "歡迎使用 BuildingAI",
+        "subtitle": "強大的開源企業智慧體搭建平台，快速開始您的智慧體之旅",
+        "viewDocs": "查看文件",
+        "startButton": "開始使用"
+    },
+    "steps": {
+        "admin": {
+            "title": "管理員帳戶",
+            "description": "管理員擁有最大權限，可以管理系統的所有功能"
+        },
+        "website": {
+            "title": "網站配置",
+            "description": "設置您的網站名稱、Logo 等資訊，打造獨特品牌形象"
+        },
+        "complete": {
+            "successMessage": "系統初始化完成"
+        }
+    },
+    "username": "使用者名稱",
+    "usernamePlaceholder": "請輸入使用者名稱（3-20個字元，僅支持字母、數字、下劃線）",
+    "password": "密碼",
+    "passwordPlaceholder": "請輸入密碼（至少6個字元）",
+    "moreOptions": "更多選項",
+    "avatar": "頭像（選填）",
+    "avatarPlaceholder": "上傳頭像",
+    "nickname": "暱稱（選填）",
+    "nicknamePlaceholder": "請輸入暱稱",
+    "email": "信箱（選填）",
+    "emailPlaceholder": "請輸入信箱地址",
+    "phone": "手機號碼（選填）",
+    "phonePlaceholder": "請輸入手機號碼",
+    "websiteName": "網站名稱",
+    "websiteNamePlaceholder": "請輸入網站名稱",
+    "websiteNameDescription": "將顯示在瀏覽器標籤頁和網站標題中",
+    "websiteDescription": "網站描述",
+    "websiteDescriptionPlaceholder": "請輸入網站描述",
+    "websiteDescriptionHint": "簡要描述您的網站（選填）",
+    "websiteLogo": "網站Logo",
+    "websiteLogoDescription": "建議尺寸：512x512px，支持 JPG、PNG 格式",
+    "websiteIcon": "網站圖示",
+    "websiteIconDescription": "瀏覽器標籤頁圖示，建議尺寸：32x32px",
+    "uploadLogo": "上傳Logo",
+    "uploadIcon": "上傳圖示",
+    "nextStep": "下一步",
+    "prevStep": "上一步",
+    "agreementTip": "啟動 BuildingAI 之前，請閱讀 Github 的",
+    "agreementLink": "開源協議",
+    "agreement": "我已閱讀並同意",
+    "and": "和",
+    "privacyLink": "隱私協議",
+    "completeTitle": "🎉 系統初始化完成！",
+    "completeDescription": "您的系統已經配置完成，現在可以開始使用了",
+    "goToHome": "前往首頁",
+    "goToConsole": "前往工作檯",
+    "successTitle": "操作成功",
+    "failureTitle": "操作失敗",
+    "failureDescription": "操作失敗，請重試",
+    "validation": {
+        "usernameRequired": "請輸入使用者名稱",
+        "usernameLength": "使用者名稱長度必須在3-20個字元之間",
+        "usernamePattern": "使用者名稱只能包含字母、數字、下劃線",
+        "passwordRequired": "請輸入密碼",
+        "passwordLength": "密碼長度不能少於6個字元",
+        "emailInvalid": "請輸入正確的信箱地址",
+        "websiteNameRequired": "請輸入網站名稱",
+        "agreementRequired": "請同意隱私協議"
+    }
+}

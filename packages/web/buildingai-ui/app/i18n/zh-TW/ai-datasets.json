@@ -1,0 +1,355 @@
+{
+    "backend": {
+        "common": {
+            "name": "名稱",
+            "description": "描述",
+            "retrievalMode": "檢索模式",
+            "documentCount": "文件數量",
+            "chunkCount": "分段數量",
+            "enabled": "已啟用",
+            "disabled": "已禁用"
+        },
+        "menu": {
+            "documents": "文件",
+            "retrieval": "召回測試",
+            "members": "協作成員",
+            "settings": "設置",
+            "segments": "分段",
+            "relatedApplications": "關聯應用"
+        },
+        "permission": {
+            "title": "無權限訪問",
+            "description": "您沒有權限查看此頁面，請聯絡知識庫擁有者或返回首頁。",
+            "back": "返回首頁"
+        },
+        "dataset": {
+            "title": "知識庫",
+            "description": "知識庫是知識庫的核心組成部分，用於儲存和管理知識庫中的文件。",
+            "searchPlaceholder": "搜索知識庫名稱或描述",
+            "table": {
+                "progress": "處理進度",
+                "storageSize": "儲存空間"
+            },
+            "create": {
+                "title": "創建知識庫",
+                "desc": "導入您自己的文本數據或通過文件上傳您的文件進行創建知識庫"
+            },
+            "allDatasets": "我創建的",
+            "retry": {
+                "title": "重試向量化",
+                "desc": "確定要重試該知識庫下所有失敗文件的向量化嗎？",
+                "success": "重試任務已提交，請稍後刷新查看進度",
+                "failed": "重試失敗"
+            },
+            "retrievalMode": "知識庫內容檢索模式",
+            "retrievalModeDesc": "文本向量進度與狀態顯示"
+        },
+        "list": {
+            "title": "知識庫列表",
+            "searchPlaceholder": "搜索知識庫名稱或描述",
+            "table": {
+                "progress": "處理進度"
+            },
+            "delete": {
+                "title": "刪除知識庫",
+                "desc": "確定要刪除選中的知識庫嗎？刪除後將無法恢復，包括所有文件和分段數據。"
+            },
+            "viewDocuments": "查看文件"
+        },
+        "documents": {
+            "title": "知識庫文件",
+            "description": "知識庫文件是知識庫的核心組成部分，用於儲存和管理知識庫中的文件。",
+            "searchPlaceholder": "搜尋文件...",
+            "addFile": "添加文件",
+            "error": "個別分段處理失敗",
+            "table": {
+                "fileName": "檔案名",
+                "fileSize": "檔案大小",
+                "fileType": "文件類型",
+                "status": "處理狀態",
+                "progress": "處理進度",
+                "characterCount": "字元數",
+                "chunkCount": "分段數",
+                "createdAt": "上傳時間"
+            },
+            "delete": {
+                "title": "刪除文件",
+                "desc": "確定要刪除該文件嗎？"
+            },
+            "renameModal": {
+                "title": "重命名文件",
+                "desc": "請輸入新的檔案名",
+                "placeholder": "請輸入檔案名",
+                "success": "重命名成功",
+                "failed": "重命名失敗"
+            },
+            "viewSegments": "查看分段",
+            "enable": {
+                "title": "啟用文件",
+                "desc": "確定要啟用該文件嗎？",
+                "success": "文件已啟用",
+                "failed": "啟用失敗"
+            },
+            "disable": {
+                "title": "禁用文件",
+                "desc": "確定要禁用該文件嗎？",
+                "success": "文件已禁用",
+                "failed": "禁用失敗"
+            },
+            "retry": {
+                "title": "重試文件向量化",
+                "desc": "確定要重試該文件下所有失敗分段的向量化嗎？",
+                "success": "重試任務已提交，請稍後刷新查看進度",
+                "failed": "重試失敗"
+            },
+            "retryDocumentDescription": "確定要重試該文件下所有失敗分段的向量化嗎？",
+            "retryDocumentSuccess": "重試任務已提交，請稍後刷新查看進度",
+            "retryDocumentFailed": "重試失敗"
+        },
+        "segments": {
+            "title": "知識庫文件分段",
+            "searchPlaceholder": "搜索分段內容...",
+            "table": {
+                "chunkIndex": "分段編號",
+                "contentLength": "內容長度"
+            },
+            "delete": {
+                "title": "刪除分段",
+                "desc": "確定要刪除該分段嗎？"
+            },
+            "batchDelete": {
+                "title": "批次刪除分段",
+                "desc": "確定要刪除這些分段嗎？",
+                "confirmText": "批次刪除",
+                "confirmDesc": "確定要刪除這些分段嗎？此操作不可撤銷。",
+                "confirmDesc2": "確定要刪除這個分段嗎？刪除後無法恢復。",
+                "success": "批次刪除成功",
+                "failed": "批次刪除失敗"
+            },
+            "createSegmentModal": {
+                "tip": "請先選擇文件",
+                "title": "創建分段",
+                "desc": "輸入分段內容",
+                "placeholder": "請輸入分段內容",
+                "success": "創建分段成功",
+                "failed": "創建分段失敗"
+            },
+            "editSegmentModal": {
+                "title": "編輯分段",
+                "desc": "輸入分段內容",
+                "placeholder": "請輸入分段內容",
+                "success": "編輯分段成功",
+                "failed": "編輯分段失敗"
+            },
+            "chunkDetail": "段落詳情",
+            "sourceFile": "來源文件",
+            "createSegment": "新增分段",
+            "rename": "重命名",
+            "segment": "分段",
+            "expandAll": "展開全部",
+            "collapseAll": "摺疊全部",
+            "noData": "暫無分段數據"
+        },
+        "dataRecord": {
+            "title": "數據記錄",
+            "desc": "全部的知識庫的數據記錄",
+            "searchPlaceholder": "搜索數據記錄"
+        },
+        "retrieval": {
+            "retrievalConfig": "檢索配置",
+            "fullText": "全文檢索",
+            "fullTextDesc": "索引文件中的所有詞彙，允許用戶查詢任何詞彙，並返回包含這些詞彙的文本片段",
+            "vector": "向量檢索",
+            "vectorDesc": "通過生成查詢與文件內容的向量表示，並計算相似度來檢索相關文件片段",
+            "hybrid": "混合檢索",
+            "hybridDesc": "同時執行全文檢索和向量檢索，並用重排序策略，從而兼具兩者優勢",
+            "rerank": "Rerank 模型",
+            "rerankDesc": "重排序模型根據語義相似度最佳化搜索結果順序",
+            "topKPlaceholder": "輸入 Top K",
+            "scoreThreshold": "Score 閾值",
+            "scoreThresholdPlaceholder": "輸入相似度閾值",
+            "weightSetting": "權重設置",
+            "weightSettingDesc": "調整語義與關鍵字權重，控制排序偏向",
+            "semantic": "語義",
+            "keyword": "關鍵字",
+            "semanticWeight": "語義權重",
+            "keywordWeight": "關鍵字權重"
+        },
+        "members": {
+            "title": "協作成員管理",
+            "description": "管理知識庫的協作成員，分配角色權限，控制訪問範圍。",
+            "searchPlaceholder": "搜索使用者名稱...",
+            "table": {
+                "user": "成員",
+                "role": "角色",
+                "createdAt": "加入時間",
+                "lastActiveAt": "最後活躍"
+            },
+            "role": {
+                "owner": "所有者",
+                "manager": "管理者",
+                "editor": "編輯者",
+                "viewer": "查看者"
+            },
+            "roleOwnerDescription": "知識庫的創建者，擁有最高權限",
+            "roleManagerDescription": "可管理團隊成員和整個知識庫項目",
+            "roleEditorDescription": "可上傳和編輯自己的知識庫數據，其他人的數據不允許編輯",
+            "roleViewerDescription": "僅能查看知識庫所有的數據，增刪改不能操作",
+            "rolePermissionDescription": "角色權限說明",
+            "self": "自己",
+            "note": "備註",
+            "notePlaceholder": "請輸入備註資訊...",
+            "transferOwnership": "轉移所有權",
+            "updateRole": "更新角色",
+            "removeMember": "移除成員",
+            "exit": "退出",
+            "roleTip": "的角色",
+            "newRole": "新角色",
+            "updateRoleModal": "更新成員角色",
+            "updateRoleSuccess": "更新角色成功",
+            "updateRoleFailed": "更新角色失敗",
+            "confirmExit": "確認退出",
+            "confirmRemove": "確認移除",
+            "exitSuccess": "退出成功",
+            "removeSuccess": "移除成功",
+            "removeFailed": "移除失敗",
+            "confirmExitContent": "確定要退出這個知識庫嗎？退出後您將無法訪問此知識庫。",
+            "confirmRemoveContent": "確定要移除這個協作成員嗎？移除後該用戶將無法訪問此知識庫。",
+            "confirmTransferContent": "確定要將知識庫所有權轉移給 ",
+            "confirmTransferSuccess": "所有權轉移成功",
+            "confirmTransferFailed": "所有權轉移失敗",
+            "confirmTransferContent2": "轉移後您將失去所有者權限。",
+            "addMember": "添加成員",
+            "confirmTransfer": "轉移所有權",
+            "addModal": {
+                "title": "添加協作成員",
+                "description": "搜索並選擇要添加的協作成員，設置角色和備註資訊",
+                "searchPlaceholder": "搜索並選擇用戶...",
+                "emptyState": "暫無用戶",
+                "userMatch": "用戶匹配",
+                "user": "用戶",
+                "selectUserError": "請選擇用戶",
+                "addMemberFailed": "添加成員失敗",
+                "addMemberFailedLog": "添加成員失敗:",
+                "addButton": "添加",
+                "noteInputPlaceholder": "備註資訊（可選）",
+                "addSuccess": "成功添加 {count} 個成員"
+            }
+        },
+        "test": {
+            "title": "召回測試",
+            "description": "根據給定的查詢文本測試知識的召回效果。",
+            "retrievalConfig": "檢索配置",
+            "placeholder": "請輸入查詢內容",
+            "success": "召回測試完成",
+            "failed": "召回測試失敗",
+            "test": "測試",
+            "record": "記錄",
+            "recallParagraph": "個召回段落",
+            "recallResult": "召回結果",
+            "tip": "請輸入查詢內容並執行召回測試"
+        },
+        "settings": {
+            "name": "知識庫設置",
+            "description": "您可以設置您的知識庫名稱以及知識庫描述，以及向量模型， 檢索設置等。",
+            "nameInput": "請輸入知識庫名稱",
+            "descriptionInput": "請輸入知識庫描述",
+            "retrievalMethod": "檢索設置",
+            "embeddingModelInput": "請選擇 embeddingModel 模型",
+            "embeddingModelWarning": {
+                "title": "重要提醒",
+                "description": "修改向量模型將導致知識庫中的所有文件數據重新進行向量化處理，此過程可能需要較長時間，請謹慎操作。"
+            }
+        },
+        "create": {
+            "step": {
+                "one": "選擇數據源",
+                "two": "文本分段與清洗",
+                "three": "處理並完成"
+            },
+            "file": {
+                "unsupportedFileType": "不支持的文件類型: {ext}",
+                "fileTooLarge": "文件過大，最大支持 {maxSize}MB",
+                "dragOrSelectFiles": "拖拽文件或文件夾至此，或者",
+                "chooseFile": "選擇文件",
+                "supportedTypes": "已支持 {types}",
+                "fileSizeLimit": "每個文件不超過 {maxSize}MB",
+                "comingSoon": "後續支持上傳其他文件類型"
+            },
+            "segmentPreview": {
+                "title": "預覽",
+                "clickLeftPreviewBlock": "點擊左側的\"預覽塊\"按鈕來查看預覽效果"
+            },
+            "createEmpty": "跳過上傳文件，創建一個空知識庫",
+            "nextStep": "下一步",
+            "previousStep": "上一步",
+            "saveAndCreate": "保存並創建",
+            "goToDetail": "前往詳情",
+            "fileList": "文件列表",
+            "uploadTextFile": "上傳文本文件",
+            "comingSoon": "即將推出",
+            "selectDataSource": "選擇數據源",
+            "selectDataSourceDesc": "您可以選擇不同的數據源來創建您的知識庫，支持導入已有文本、問答對導入、網頁解析。",
+            "name": "知識庫名稱",
+            "description": "知識庫描述",
+            "basicInfo": "基本資訊",
+            "basicInfoDesc": "您可以設置您的知識庫名稱以及知識庫描述，這將幫助您有效管理您的知識庫。",
+            "dataSource": "數據源",
+            "dataSources": {
+                "text": {
+                    "title": "導入已有文本",
+                    "description": "上傳本地電腦的文件，對文本進行訓練"
+                },
+                "chat": {
+                    "title": "問答對導入",
+                    "description": "支持問答對導入，對問答對進行訓練"
+                },
+                "web": {
+                    "title": "網頁解析",
+                    "description": "支持網頁解析，對網頁內容進行訓練"
+                }
+            },
+            "segment": {
+                "general": "通用",
+                "generalDesc": "系統將根據特定的分段標識符將文本分段",
+                "hierarchical": "父子分段",
+                "hierarchicalDesc": "使用父子模式時，子塊用於檢索，父塊用作上下文",
+                "segmentIdentifier": "分段標識符",
+                "segmentIdentifierDesc": "輸入 \\n\\n 表示兩個換行符，預覽時會自動轉換為實際換行",
+                "maxSegmentLength": "分段最大長度",
+                "maxSegmentLengthDesc": "分段最大長度",
+                "segmentOverlap": "分段重疊長度",
+                "segmentOverlapDesc": "分段重疊長度",
+                "preprocessingRules": "文本預處理規則",
+                "replaceConsecutiveWhitespace": "替換連續的空格、換行符和製表符",
+                "removeUrlsAndEmails": "移除URL和信箱",
+                "removeUrlsAndEmailsDesc": "移除URL和信箱",
+                "parentContext": "父塊用作上下文",
+                "paragraph": "段落",
+                "parentContextDesc": "此模式根據分隔符號和最大長度將文本分為分段，使用拆分文本作為檢索的父塊分段標識符",
+                "preview": "預覽塊",
+                "fullText": "全文",
+                "fullTextDesc": "整個文件作為父塊文本並直接檢索。請注意，出於性能原因，超過 10000 個標記的文本將被自動截斷。",
+                "subSegmentation": "子塊用於檢索"
+            },
+            "stepThree": {
+                "dataTitle": "🎉文件添加成功",
+                "dataDesc": "已成功添加文件到知識庫，你可以在知識庫的文件管理頁面查看",
+                "createTitle": "🎉創建成功",
+                "createDesc": "已成功創建知識庫，你可以在知識庫的文件管理頁面查看",
+                "documentEmbedding": "文件嵌入中",
+                "documentEmbeddingSuccess": "文件嵌入完成",
+                "no": "無",
+                "default": "默認設置",
+                "returnCount": "返回數量",
+                "segmentMode": "分段模式",
+                "goToDetail": "前往詳情"
+            },
+            "stepTwo": {
+                "segmentation": "分段設置",
+                "embeddingModel": "Embedding 模型",
+                "retrievalSettings": "檢索設置"
+            }
+        }
+    }
+}

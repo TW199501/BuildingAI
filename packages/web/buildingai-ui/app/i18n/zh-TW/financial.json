@@ -1,0 +1,52 @@
+{
+    "accountBalance": {
+        "searchPlaceholder": "請輸入用戶ID/暱稱/手機號碼",
+        "selectPlaceholder": "變動類型",
+        "allTypes": "全部類型",
+        "userRecharge": "用戶儲值",
+        "userRechargeGift": "用戶儲值贈送",
+        "userRechargeRefund": "用戶儲值退款",
+        "systemIncreasePower": "系統手動增加積分",
+        "systemDecreasePower": "系統手動減扣積分",
+        "basicConversation": "基本對話",
+        "agentConversation": "智慧體對話",
+        "sharedAgentConversation": "連結分享智慧體對話",
+        "pluginConsumption": "應用消耗",
+        "table": {
+            "userNo": "用戶編號",
+            "nickname": "用戶暱稱",
+            "changeAmount": "變動數量",
+            "leftAmount": "剩餘數量",
+            "accountTypeDesc": "變動類型",
+            "associationUser": "操作人",
+            "createdAt": "記錄時間",
+            "consumeSourceDesc": "來源"
+        }
+    },
+    "financialCenter": {
+        "finance": {
+            "title": "經營概況",
+            "totalIncomeAmount": "累計收入金額",
+            "totalIncomeNum": "累計訂單數（筆）",
+            "totalRefundAmount": "累計退款金額",
+            "totalRefundNum": "累計退款訂單",
+            "totalNetIncome": "累計淨收入"
+        },
+        "recharge": {
+            "title": "訂單概況",
+            "rechargeAmount": "累計儲值金額",
+            "rechargeNum": "儲值訂單數",
+            "rechargeRefundAmount": "累計退款金額",
+            "rechargeNetIncome": "儲值淨收入",
+            "rechargeRefundNum": "退款訂單"
+        },
+        "user": {
+            "title": "用戶概況",
+            "totalUserNum": "用戶總人數",
+            "totalRechargeNum": "累計儲值人數",
+            "totalChatNum": "用戶累計提問次數",
+            "totalRechargeAmount": "用戶累計消費金額",
+            "totalPowerSum": "用戶剩餘積分"
+        }
+    }
+}

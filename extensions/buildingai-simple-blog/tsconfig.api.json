@@ -3,8 +3,11 @@
     "compilerOptions": {
         "outDir": "./build",
         "rootDir": "./src/api",
-        "tsBuildInfoFile": "dist/build.tsbuildinfo",
-        "resolveJsonModule": true,
+        "target": "es2020",
+        "module": "esnext",
+        "tsBuildInfoFile": "build/api.tsbuildinfo",
+        "incremental": true,
+        "resolveJsonModule": true
     },
     "include": [
         "src/api/**/*"

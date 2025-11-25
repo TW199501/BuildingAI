@@ -1,8 +1,15 @@
 {
-    "extends": [
-        "./.nuxt/tsconfig.json"
-    ],
+    "extends": "../../packages/web/buildingai-ui/.nuxt/tsconfig.json",
     "compilerOptions": {
-        "tsBuildInfoFile": "build/build.tsbuildinfo",
-    }
+        "tsBuildInfoFile": "build/web.tsbuildinfo",
+        "incremental": true
+    },
+    "include": [
+        "web/**/*",
+        "../../packages/web/buildingai-ui/.nuxt/types/imports.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
 }

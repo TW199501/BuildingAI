@@ -12,6 +12,9 @@ import jpLogin from "./jp/login.json";
 import zhCommon from "./zh/common.json";
 import zhLayouts from "./zh/layouts.json";
 import zhLogin from "./zh/login.json";
+import zhTwCommon from "./zh-TW/common.json";
+import zhTwLayouts from "./zh-TW/layouts.json";
+import zhTwLogin from "./zh-TW/login.json";
 
 /**
  * All available shared locale translations
@@ -26,6 +29,11 @@ export const sharedMessages = {
         common: zhCommon,
         layouts: zhLayouts,
         login: zhLogin,
+    },
+    "zh-TW": {
+        common: zhTwCommon,
+        layouts: zhTwLayouts,
+        login: zhTwLogin,
     },
     jp: {
         common: jpCommon,

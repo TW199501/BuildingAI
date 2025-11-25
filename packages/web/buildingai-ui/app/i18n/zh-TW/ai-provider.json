@@ -1,0 +1,154 @@
+{
+    "backend": {
+        "addTitle": "自訂",
+        "editTitle": "編輯AI供應商",
+        "providerSettings": "供應商設置",
+        "form": {
+            "name": "供應商名稱",
+            "namePlaceholder": "請輸入供應商名稱",
+            "nameRequired": "請輸入供應商名稱",
+            "provider": "供應商標識",
+            "providerPlaceholder": "例如：openai、anthropic",
+            "providerRequired": "請輸入供應商標識",
+            "apiKeyRequired": "請輸入API金鑰",
+            "websiteUrl": "官網地址",
+            "websiteUrlPlaceholder": "https://openai.com",
+            "iconUrl": "圖示地址",
+            "description": "供應商描述",
+            "descriptionPlaceholder": "描述供應商的特點和服務...",
+            "sortOrder": "排序",
+            "sortOrderPlaceholder": "0",
+            "isActive": "啟用狀態",
+            "isActiveEnabled": "啟用供應商",
+            "goToApiKeyManage": "前往配置",
+            "isActiveDisabled": "禁用供應商",
+            "addDescription": "配置新的AI服務供應商",
+            "editDescription": "修改AI服務供應商資訊",
+            "modelType": "支持模型類型",
+            "supportedModelTypesRequired": "請輸入支持的模型類型"
+        },
+        "search": {
+            "placeholder": "搜索供應商名稱、標識符或描述",
+            "status": "選擇狀態",
+            "all": "全部"
+        },
+        "confirm": {
+            "deleteTitle": "刪除供應商",
+            "deleteMessage": "確定要刪除選中的供應商嗎？此操作不可恢復。"
+        },
+        "messages": {
+            "enableSuccess": "供應商已啟用",
+            "disableSuccess": "供應商已禁用"
+        },
+        "empty": {
+            "noProviders": "暫無供應商",
+            "noProvidersDescription": "還沒有配置任何AI服務供應商",
+            "addFirstProvider": "添加第一個供應商"
+        },
+        "stats": {
+            "totalProviders": "共 {count} 個供應商"
+        },
+        "model": {
+            "addTitle": "新增AI模型",
+            "editTitle": "編輯AI模型",
+            "batchEditTitle": "批次編輯AI模型",
+            "addModel": "添加模型",
+            "allModels": "所有模型",
+            "selected": "已選擇",
+            "unit": "個",
+            "points": "積分",
+            "tokens": "個 Tokens",
+            "noModels": "暫無模型",
+            "noModelsDescription": "該供應商下還沒有配置任何模型",
+            "searchPlaceholder": "搜索模型",
+            "batchOperation": "批次操作 ({count})",
+            "form": {
+                "name": "模型名稱",
+                "namePlaceholder": "請輸入模型名稱",
+                "nameHelp": "用於顯示的模型名稱，建議簡潔明瞭",
+                "model": "模型標識符",
+                "modelPlaceholder": "請輸入模型標識符",
+                "description": "模型描述",
+                "descriptionPlaceholder": "請輸入模型描述",
+                "maxContext": "對話上下文",
+                "maxContextPlaceholder": "請輸入對話上下文輪數",
+                "maxContextUnit": "輪",
+                "maxContextHelp": "模型記憶的對話輪數",
+                "isDefault": "默認模型",
+                "setAsDefault": "設置為系統默認模型",
+                "modelType": "模型類型",
+                "modelTypePlaceholder": "請輸入模型類型",
+                "billing": "計費規則",
+                "power": "積分",
+                "billingHelp": "每多少 tokens 消耗多少積分"
+            },
+            "batchEdit": {
+                "name": "名稱",
+                "model": "模型標識",
+                "maxContext": "最大上下文",
+                "isActive": "是否啟用",
+                "billingRule": "對話消耗"
+            },
+            "validation": {
+                "nameRequired": "請輸入模型名稱",
+                "nameMaxLength": "模型名稱長度不能超過100個字元",
+                "modelRequired": "請輸入模型標識符",
+                "modelMaxLength": "模型標識符長度不能超過100個字元",
+                "modelTypeRequired": "請選擇模型類型",
+                "maxTokensMin": "最大Token數不能小於1",
+                "maxContextMin": "對話上下文輪數不能小於1",
+                "descriptionMaxLength": "模型描述長度不能超過500個字元"
+            },
+            "messages": {
+                "isActiveEnabled": "模型已啟用",
+                "isActiveDisabled": "模型已禁用",
+                "deleteTitle": "刪除模型",
+                "deleteMsg": "確定要刪除選中的模型嗎？此操作不可恢復。"
+            },
+            "modelTypeFilter": "篩選模型類型",
+            "modelTypes": {
+                "all": "全部"
+            }
+        },
+        "modelConfig": {
+            "title": "高級參數",
+            "temperature": {
+                "title": "溫度 (temperature)",
+                "description": "控制輸出的隨機性，值越高結果越來越散，常用範圍0~1，默認1"
+            },
+            "top_p": {
+                "title": "採樣率 (top_p)",
+                "description": "控制核採樣的閾值，通常與temperature互斥，默認1"
+            },
+            "max_tokens": {
+                "title": "最大Token數 (max_tokens)",
+                "description": "限制生成文本的最大長度，默認16"
+            },
+            "top_k": {
+                "title": "採樣數量 (top_k)",
+                "description": "從前k個機率最高的詞彙中採樣，部分模型支持，默認50"
+            },
+            "frequency_penalty": {
+                "title": "重複懲罰 (frequency_penalty)",
+                "description": "控制重複使用詞彙的懲罰係數，值越大越少重複，默認0"
+            },
+            "presence_penalty": {
+                "title": "存在懲罰 (presence_penalty)",
+                "description": "控制話題引入新詞彙的傾向，值越大越容易引入新話題，默認0"
+            },
+            "stop": {
+                "title": "停止詞 (stop)",
+                "description": "遇到這些詞就停止生成，通常是字串數組，預設禁用",
+                "placeholder": "輸入停止詞，多個用逗號分隔"
+            },
+            "validation": {
+                "duplicateField": "參數欄位名不能重複"
+            },
+            "addParameter": "添加參數",
+            "custom": {
+                "fieldPlaceholder": "參數欄位名 (如: my_parameter)",
+                "valuePlaceholder": "參數值"
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "backend": {
+        "search": {
+            "placeholder": "搜索對話標題或內容..."
+        },
+        "actions": {
+            "viewDetail": "查看詳情"
+        },
+        "list": {
+            "title": "對話標題",
+            "userName": "使用者名稱",
+            "messageCount": "對話次數",
+            "totalTokens": "Token消耗",
+            "totalPower": "積分消耗"
+        },
+        "detail": {
+            "title": "對話詳情",
+            "description": "查看AI對話記錄詳細資訊",
+            "info": "對話資訊",
+            "chatTitle": "對話標題",
+            "user": "用戶",
+            "messageCount": "消息數量",
+            "isPinned": "已置頂",
+            "messages": "對話消息",
+            "notFound": "對話不存在或已被刪除",
+            "metadata": "元數據",
+            "total": "共消耗"
+        },
+        "empty": {
+            "title": "暫無對話記錄",
+            "description": "還沒有任何AI對話記錄"
+        },
+        "delete": {
+            "title": "刪除對話",
+            "description": "確定要刪除選中的對話嗎？此操作不可恢復。"
+        },
+        "roles": {
+            "user": "用戶",
+            "assistant": "助手"
+        },
+        "config": {
+            "title": "對話配置管理",
+            "description": "管理聊天頁面的建議選項和歡迎資訊",
+            "welcomeInfo": {
+                "title": "歡迎資訊配置",
+                "description": "配置聊天頁面的歡迎標題、描述和頁尾資訊",
+                "titleLabel": "歡迎標題",
+                "titlePlaceholder": "請輸入歡迎標題",
+                "descriptionLabel": "歡迎描述",
+                "descriptionPlaceholder": "請輸入歡迎描述",
+                "footerLabel": "頁尾資訊",
+                "footerPlaceholder": "請輸入頁尾資訊"
+            },
+            "suggestions": {
+                "title": "建議選項配置",
+                "description": "配置聊天頁面的建議按鈕選項",
+                "enabled": "啟用建議選項",
+                "iconPlaceholder": "圖示",
+                "textPlaceholder": "請輸入建議文本",
+                "minItemWarning": "至少保留一個建議選項"
+            },
+            "validation": {
+                "titleRequired": "歡迎標題不能為空",
+                "descriptionRequired": "歡迎描述不能為空",
+                "suggestionTextRequired": "建議選項文本不能為空"
+            },
+            "messages": {
+                "fetchFailed": "獲取對話配置失敗",
+                "updateSuccess": "對話配置更新成功",
+                "updateFailed": "對話配置更新失敗"
+            },
+            "attachmentSizeLimit": {
+                "title": "對話相關",
+                "label": "對話附件大小限制",
+                "placeholder": "請輸入附件大小限制 (MB)"
+            }
+        }
+    },
+    "frontend": {
+        "newChat": "開啟新的對話",
+        "noChats": "暫無對話記錄",
+        "noChatsSubtitle": "點擊上方按鈕開始新對話",
+        "currentChat": "當前對話",
+        "confirmDelete": "永久刪除對話",
+        "confirmDeleteMessage": "刪除後，該對話將不可恢復。確認刪除嗎？",
+        "confirmDeleteAction": "確認刪除",
+        "editChatTitle": "編輯對話名稱",
+        "chatTitleLabel": "對話名稱",
+        "chatTitlePlaceholder": "請輸入對話名稱",
+        "chatTitleRequired": "對話名稱不能為空",
+        "expandSidebar": "展開側邊欄",
+        "collapseSidebar": "摺疊側邊欄",
+        "selectModel": "請先選擇模型",
+        "singleRunConsumption": "消耗 {price} 積分/次",
+        "and": "與 {name} 對話...",
+        "messages": {
+            "thinking": "AI正在思考中...",
+            "typing": "對方正在輸入中...",
+            "sendFailed": "消息發送失敗，請重試",
+            "me": "我",
+            "assistant": "AI助手",
+            "unknown": "未知",
+            "copied": "已複製",
+            "copy": "複製",
+            "retry": "重試",
+            "stopGeneration": "停止生成",
+            "enterQuestion": "請輸入你的問題",
+            "sendMessage": "發送消息",
+            "inputPlaceholder": "Hi~有什麼想問小助手的"
+        },
+        "reasoning": {
+            "thinking": "思考中...",
+            "completed": "已深度思考",
+            "duration": "用時 "
+        },
+        "toolCall": {
+            "start": "開始",
+            "from": "從",
+            "finished": "完成",
+            "calling": "正在調用",
+            "call": "調用",
+            "startCall": "開始調用工具",
+            "finishedCall": "完成調用工具",
+            "duration": "耗時"
+        },
+        "knowledgeCall": {
+            "start": "開始",
+            "from": "從",
+            "finished": "完成",
+            "calling": "正在檢索",
+            "call": "調用",
+            "duration": "耗時"
+        }
+    }
+}

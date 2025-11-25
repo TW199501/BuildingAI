@@ -1,0 +1,101 @@
+{
+    "wechatOA": {
+        "title": "公眾號開發者資訊",
+        "description": "登錄微信公眾平台，點擊開發>基本配置>公眾號開發訊息，設置AppID和AppSecret",
+        "tabs": {
+            "info": "基本資訊",
+            "setting": "伺服器配置",
+            "function": "功能設定"
+        },
+        "form": {
+            "appId": {
+                "label": "AppId",
+                "placeholder": "請輸入AppId",
+                "required": "AppId不能為空"
+            },
+            "appSecret": {
+                "label": "AppSecret",
+                "placeholder": "請輸入AppSecret",
+                "required": "AppSecret不能為空"
+            },
+            "token": {
+                "label": "Token",
+                "placeholder": "請輸入Token",
+                "required": "Token不能為空",
+                "description": "登錄微信公眾平台，點擊開發>基本配置>伺服器配置，設置令牌Token"
+            },
+            "encodingAESKey": {
+                "label": "EncodingAESKey",
+                "placeholder": "請輸入EncodingAESKey",
+                "required": "EncodingAESKey不能為空",
+                "description": "消息加密金鑰由43位字元組成，字元範圍為A-Z,a-z,0-9"
+            },
+            "messageEncryptType": {
+                "label": "消息加密方式",
+                "required": "請選擇消息加密方式"
+            },
+            "url": {
+                "label": "URL",
+                "placeholder": "請輸入URL",
+                "description": "登錄微信公眾平台，點擊開發>基本配置>伺服器配置，填寫伺服器地址（URL）"
+            },
+            "domain": {
+                "label": "業務域名",
+                "placeholder": "請輸入業務域名",
+                "description": "登錄微信公眾平台，點擊設置>公眾號設置>功能設定，填寫業務域名"
+            },
+            "jsApiDomain": {
+                "label": "JS介面安全域名",
+                "placeholder": "請輸入JS介面安全域名",
+                "description": "登錄微信公眾平台，點擊設置>公眾號設置>功能設定，填寫JS介面安全域名"
+            },
+            "webAuthDomain": {
+                "label": "網頁授權域名",
+                "placeholder": "請輸入網頁授權域名",
+                "description": "登錄微信公眾平台，點擊設置>公眾號設置>功能設定，填寫網頁授權域名"
+            },
+            "formReset": "表單已重設"
+        },
+        "submit": {
+            "success": "配置保存成功",
+            "error": "配置保存失敗"
+        },
+        "validation": {
+            "appId": {
+                "required": "請輸入AppId",
+                "invalid": "AppId格式不正確"
+            },
+            "appSecret": {
+                "required": "請輸入AppSecret",
+                "invalid": "AppSecret格式不正確"
+            },
+            "token": {
+                "required": "請輸入Token",
+                "invalid": "Token格式不正確"
+            },
+            "encodingAESKey": {
+                "required": "請輸入EncodingAESKey",
+                "invalid": "EncodingAESKey格式不正確"
+            },
+            "messageEncryptType": {
+                "required": "請選擇消息加密方式"
+            }
+        },
+        "sections": {
+            "serverConfig": "伺服器配置",
+            "functionSettings": "功能設定"
+        },
+        "messageEncryptType": {
+            "plain": "明文模式 (不使用消息體加解密功能，安全係數較低)",
+            "compatible": "相容模式 (明文、密文將共存，方便開發者除錯和維護)",
+            "safe": "安全模式（推薦） (消息包為純密文，需要開發者加密和解密，安全係數高)"
+        },
+        "actions": {
+            "saving": "保存中...",
+            "copySuccess": "URL已複製到剪貼簿",
+            "copyDomainSuccess": "業務域名已複製到剪貼簿",
+            "copyJsApiDomainSuccess": "JS介面安全域名已複製到剪貼簿",
+            "copyWebAuthDomainSuccess": "網頁授權域名已複製到剪貼簿"
+        }
+    }
+}

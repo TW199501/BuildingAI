@@ -44,7 +44,9 @@
                 "refundStatus": "返金ステータス",
                 "serialNumber": "取引番号",
                 "close": "閉じる",
-                "refund": "返金申請"
+                "refund": "返金申請",
+                "paid": "支払済み",
+                "unpaid": "未払い"
             }
         }
     },

@@ -44,11 +44,13 @@ function getLanguageDefinitions() {
     const result = {
         language: {
             ZH: "zh",
+            ZH_TW: "zh-TW",
             EN: "en",
             JP: "jp",
         },
         options: [
             { code: "zh", name: "简体中文", translationCode: "zh" },
+            { code: "zh-TW", name: "繁體中文", translationCode: "zh-Hant" },
             { code: "en", name: "English", translationCode: "en" },
             { code: "jp", name: "日本語", translationCode: "ja" },
         ],
