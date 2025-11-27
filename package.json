@@ -121,7 +121,7 @@
         "echarts": "catalog:web",
         "express": "catalog:api",
         "fs-extra": "^11.3.2",
-        "glob": "^11.0.3",
+        "glob": "^11.1.0",
         "motion-v": "catalog:web",
         "multer": "^2.0.2",
         "nuxt": "catalog:web",
